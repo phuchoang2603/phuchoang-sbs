@@ -2,7 +2,12 @@
 
 If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.
 
+{{< raw >}}
+  <div>
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/vATS81L9vWA" title="MeloNX Nintedo Switch Emulation on Ipad Mini 7 - Mario Kart Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+{{< /raw >}}
+
 ---
 ## The JIT Struggle
 Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.

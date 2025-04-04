@@ -3,7 +3,11 @@
 
 ## Video demo:
 
+{{< raw >}}
+  <div>
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/RgkC246Ul44" title="Automatic manga translation for Suwayomi." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+{{< /raw >}}
 
 ---
 ## The Struggle: Why I Needed This

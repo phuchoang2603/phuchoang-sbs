@@ -26,4 +26,8 @@ So, here’s the reason behind this website. It’s a place where I hope to brid
 
 If you have an interest in learning more about my technical background, I am more than willing to share it with you.
 
+{{< raw >}}
+  <div>
 <iframe src="https://drive.google.com/file/d/1h7tW7gypFfNtXxCSCXvKfQAeLbcja2Jf/preview" style="width: 100%; min-height: 720px; border: none;" allow="autoplay"></iframe>
+  </div>
+{{< /raw >}}

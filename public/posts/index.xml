@@ -11,44 +11,13 @@
     <author>Felix Hoang</author>
     <guid>https://phuchoang.sbs/posts/emulation-switch-ipad/</guid>
     <description><![CDATA[<p>If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.</p>
-<!-- raw HTML omitted -->
+<data id="id-1" data-raw></data>
 <hr>
-<h2 id="essential-tips-before-you-begin">Essential Tips Before You Begin</h2>
-<ol>
-<li><strong>Disable Low Power Mode</strong> – Emulation needs full power.</li>
-<li><strong>Keep required apps running in the background</strong> – The setup is delicate; one wrong move can break it.</li>
-<li><strong>Use Shared Folders for file transfers</strong> – Dragging gigabytes of game files via Google Drive, USB? No thanks—use <a href="https://www.wikihow.com/Access-a-Shared-Folder-on-an-iPhone-or-iPad" target="_blank" rel="noopener noreffer ">mounted shared folders</a>.
-</li>
-</ol>
-<hr>
-<h2 id="installing-sidestore">Installing SideStore</h2>
-<ol>
-<li><strong>Check prerequisites (no need to install Wireguard VPN as we will replace it with StosVPN) and pairing file instructions:</strong> <a href="https://docs.sidestore.io/docs/getting-started/prerequisites" target="_blank" rel="noopener noreffer ">SideStore Docs</a></li>
-<li><strong>Generate a pairing file:</strong>
-<ul>
-<li>Download <code>jitterbugpair.exe</code></li>
-<li>Run it and transfer the <code>*.mobiledevicepairing</code> file to your phone
-</li>
-</ul>
-</li>
-<li><strong>Install SideStore:</strong>
-<ul>
-<li>Install <strong>AltServer</strong> <a href="https://docs.sidestore.io/docs/getting-started/windows" target="_blank" rel="noopener noreffer ">Windows Guide</a></li>
-<li>Hold <strong>Shift + Click</strong> the AltServer tray icon and sideload the SideStore IPA</li>
-</ul>
-</li>
-<li><strong>Final Tweaks:</strong>
-<ul>
-<li>Install <strong>StosVPN</strong> from the App Store and enable it</li>
-<li>Open SideStore, pair it with the pairing file</li>
-<li>Refresh the app and remove previous AltServer certificates
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="installing-livecontainer">Installing LiveContainer</h2>
-<p>SideStore limits the number of installed apps to three, but <strong>LiveContainer</strong> bypasses this restriction. Here’s how to install it:</p>]]></description>
+<h2 id="the-jit-struggle">The JIT Struggle</h2>
+<p>Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
+However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
+Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator on iOS.
+<a href="https://www.youtube.com/watch?v=zgdzy7q_dkU" target="_blank" rel="noopener noreffer ">PPSSPP On iOS 17 (NO JIT vs JIT) iPhone XR</a></p>]]></description>
 </item>
 <item>
     <title>Automating Manga Translations: My Journey to a Seamless Reading Experience</title>
@@ -57,7 +26,7 @@
     <author>Felix Hoang</author>
     <guid>https://phuchoang.sbs/posts/self-hosted-manga-trans/</guid>
     <description><![CDATA[<h2 id="video-demo">Video demo:</h2>
-<!-- raw HTML omitted -->
+<data id="id-1" data-raw></data>
 <hr>
 <h2 id="the-struggle-why-i-needed-this">The Struggle: Why I Needed This</h2>
 <p>Have you ever stumbled upon a manga so niche and obscure that it never gets an official English release? That was me—desperately trying to read intimate and underrated series that weren’t even on MangaDex, likely due to copyright issues.</p>

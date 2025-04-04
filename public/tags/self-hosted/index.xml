@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Self-Hosted - Tag - Everyone, meet fel1x</title>
+        <link>https://phuchoang.sbs/tags/self-hosted/</link>
+        <description>Self-Hosted - Tag - Everyone, meet fel1x</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
+            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Mon, 03 Mar 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://phuchoang.sbs/tags/self-hosted/" rel="self" type="application/rss+xml" /><item>
+    <title>Automating Manga Translations: My Journey to a Seamless Reading Experience</title>
+    <link>https://phuchoang.sbs/posts/self-hosted-manga-trans/</link>
+    <pubDate>Mon, 03 Mar 2025 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>https://phuchoang.sbs/posts/self-hosted-manga-trans/</guid>
+    <description><![CDATA[<h2 id="video-demo">Video demo:</h2>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="the-struggle-why-i-needed-this">The Struggle: Why I Needed This</h2>
+<p>Have you ever stumbled upon a manga so niche and obscure that it never gets an official English release? That was me—desperately trying to read intimate and underrated series that weren’t even on MangaDex, likely due to copyright issues.</p>
+<p>At first, I took the long road: hunting for raw Japanese scans, screenshotting pages, and running them through image translation tools. It worked&hellip; barely. The process was painfully slow and completely broke my immersion. Instead of enjoying the story, I spent more time waiting on awkward machine translations. It was, in a word, <strong>disruptive</strong>.</p>]]></description>
+</item>
+</channel>
+</rss>

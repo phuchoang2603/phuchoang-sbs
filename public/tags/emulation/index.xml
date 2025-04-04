@@ -1,0 +1,54 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Emulation - Tag - Everyone, meet fel1x</title>
+        <link>https://phuchoang.sbs/tags/emulation/</link>
+        <description>Emulation - Tag - Everyone, meet fel1x</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
+            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://phuchoang.sbs/tags/emulation/" rel="self" type="application/rss+xml" /><item>
+    <title>Run Nintendo Switch Games on iPhone at 60FPS – Free, No Jailbreak Needed</title>
+    <link>https://phuchoang.sbs/posts/emulation-switch-ipad/</link>
+    <pubDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>https://phuchoang.sbs/posts/emulation-switch-ipad/</guid>
+    <description><![CDATA[<p>If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.</p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="essential-tips-before-you-begin">Essential Tips Before You Begin</h2>
+<ol>
+<li><strong>Disable Low Power Mode</strong> – Emulation needs full power.</li>
+<li><strong>Keep required apps running in the background</strong> – The setup is delicate; one wrong move can break it.</li>
+<li><strong>Use Shared Folders for file transfers</strong> – Dragging gigabytes of game files via Google Drive, USB? No thanks—use <a href="https://www.wikihow.com/Access-a-Shared-Folder-on-an-iPhone-or-iPad" target="_blank" rel="noopener noreffer ">mounted shared folders</a>.
+</li>
+</ol>
+<hr>
+<h2 id="installing-sidestore">Installing SideStore</h2>
+<ol>
+<li><strong>Check prerequisites (no need to install Wireguard VPN as we will replace it with StosVPN) and pairing file instructions:</strong> <a href="https://docs.sidestore.io/docs/getting-started/prerequisites" target="_blank" rel="noopener noreffer ">SideStore Docs</a></li>
+<li><strong>Generate a pairing file:</strong>
+<ul>
+<li>Download <code>jitterbugpair.exe</code></li>
+<li>Run it and transfer the <code>*.mobiledevicepairing</code> file to your phone
+</li>
+</ul>
+</li>
+<li><strong>Install SideStore:</strong>
+<ul>
+<li>Install <strong>AltServer</strong> <a href="https://docs.sidestore.io/docs/getting-started/windows" target="_blank" rel="noopener noreffer ">Windows Guide</a></li>
+<li>Hold <strong>Shift + Click</strong> the AltServer tray icon and sideload the SideStore IPA</li>
+</ul>
+</li>
+<li><strong>Final Tweaks:</strong>
+<ul>
+<li>Install <strong>StosVPN</strong> from the App Store and enable it</li>
+<li>Open SideStore, pair it with the pairing file</li>
+<li>Refresh the app and remove previous AltServer certificates
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="installing-livecontainer">Installing LiveContainer</h2>
+<p>SideStore limits the number of installed apps to three, but <strong>LiveContainer</strong> bypasses this restriction. Here’s how to install it:</p>]]></description>
+</item>
+</channel>
+</rss>

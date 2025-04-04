@@ -17,6 +17,8 @@ But that’s not entirely ideal, is it? I don’t want to be the kind of person 
 
 So, here’s the reason behind this website. It’s a place where I hope to bridge the gap between my past and my future, sharing my journey, experiences, and thoughts with you and anyone else who stumbles upon it. It’s a way for me to reflect, remember, and, hopefully, inspire others along the way.
 
+Here's some more interesting facts about me:
+
 | **Field**     | **Information**                    |
 |---------------|------------------------------------|
 | Birthday      | 26.03.2006                         |

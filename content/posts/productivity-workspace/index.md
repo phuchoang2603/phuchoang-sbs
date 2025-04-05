@@ -27,7 +27,7 @@ To this day, even though I couldn't keep the laptop because I donated it to my c
 
 ![](https://i.imgur.com/5el7iUC.jpg)
 
-Boom, a big upgrade coming right there. Like, literally from a $50 budget laptop to a $700 high-end PC. Not to mention this is also the first time I have had the courage to ask my mom for a present, as I usually shy away from asking my parents to spend money on me. However, this time was different because for the first time in my life, my parents were ready to spend this much for my attendance at Amsterdam High School.
+Boom, a big upgrade coming right there. Like, literally from a 50 USD budget laptop to a 700 USD high-end PC. Not to mention this is also the first time I have had the courage to ask my mom for a present, as I usually shy away from asking my parents to spend money on me. However, this time was different because for the first time in my life, my parents were ready to spend this much for my attendance at Amsterdam High School.
 
 However, as much of a tragedy it may seem, this is also the time when hardware components became so expensive due to the rise of Bitcoin and Cryptocurrency mining. So if I had the opportunity to go back, I would probably wait until November 2021 to buy a new one because with the same specifications, I could have spent only around $400 on this one. Still, I am so grateful for this because it was a big transition from my last laptop and it serves my needs way better than its capabilities.
 

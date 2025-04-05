@@ -1,0 +1,14 @@
+- introduction
+- origin reason: 
+	- mother hp prodesk 600 g4 leftout from office -> don't know if i should seld, get money or just keep finding an use with it.
+	- finally spent 1 night to set up xpenology to act as a storage server, but it require a usb to boot every times
+	- in an attempt to looking for solutions, i found out proxmox, which is ... so i install my first xpenology vms on it, backing up all my photos.
+	- but i found out my hardward quite outdated -> try to get for the additional hardware to equipped (gt 1030 video card)
+- finding an truly effective reason with a video card
+	- so with an unexpected nearly broken video card, i attached on it and it runs smoothly (well, to be honest, it was not a easy journey though, i had to tinkering with it several days to just get it working)
+	- also, at that time, i had a chance to get to know with AI, computer vision and stuff (due to participation in the [[My STEAM Hacks 2023 experience]]), i also discovered Stable Diffusion, which could be ideally self-hosted with an graphic card on your own. I also set up an automation using Telegram messaging service to generate the image on the go.
+	- but the most thoughtful and truly bring varies meanings to my family would be self-hosting frigate & HASS (home assistant server service). i dedicated several days to link my existing Hik-vision NVR camera management to Frigate, which was also another NVR camera management but it have additional feature like object recognition, face detection, etc ... using the graphic cards. And then i come up with the idea of hosting it together with HASS to automate the workflow: capturing doubtful person movement outside my house to notify it to my family via Telegram.
+- addiction & wanting for more	
+	 - yeah, after succesfully achieve a target, i still feel like my self host server could be improve as i do not utilize the most out of it yet (or rather i was too bored with nothing to do at that time)
+	- opt for media automation with an *Arr* family apps. i guess this one makes me feel most excited because of how many application have to link with each other (i also set it to link with my Synology NAS via FTP) -> together create an whole network of apps only serving for watching movies like Netflix
+	- try 

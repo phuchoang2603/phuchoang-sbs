@@ -112,6 +112,35 @@ S2V5cyAmIEZpcm13YXJlOiBodHRwczovL3Byb2RrZXlzLm5ldC8NCkdhbWVzOiBodHRwczovL25zd2dh
 Some useful tips I’ve come across:
 - Always download both the **game** and its **update file** for the best performance.
 - Large files may get stuck during transfers due to MeloNX’s lack of a proper file transfer UI.
+## MeloNX Settings for best performance or least ram usage
+### Use the following settings to get the best possible performance
+```
+Shader Cache: On (may causes games to use much more ram which can cause crashes on devices with not enough ram tho)
+Disable VSync: Off (Enable if you want more than 30/60fps if your device can handle it)
+Texture Recompression: On
+MacroHLE: On
+Docked Mode: Off
+Resolution Scale: Use the lowest resolution you still find good where it doesn’t crash
+Memory Manager: Sometimes "Host Unchecked (fast, unstable / unsafe" or "Host (fast)" has better performance
+Ignore Missing Services: On
+Debug Logs: Off
+Trace Logs: Off
+MVK: Pre-fill Metal Command Buffers: Off
+```
+### Use the following settings to get the least amount of ram usage in a game
+```
+Shader Cache: Off
+Texture Recompression: On
+MacroHLE: On
+Docked Mode: Off
+Resolution Scale: The lower, the better
+Expand Guest Ram: Off
+Ignore Missing Services: On
+Debug Logs: Off
+Trace Logs: Off
+Memory Manager Mode: Host (fast)
+Disable PTC: On
+```
 ---
 ## Credits & Sources
 This guide was compiled from various sources and contributions:

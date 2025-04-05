@@ -44,7 +44,9 @@ After having lunch and a break, we spent the entire afternoon getting to know ea
 *Playing the "musical chairs" game together*
 
 After finishing the activities, the sky had darkened, and we were quite tired from the day of travel. We decided to return to the hotel to rest.
+
 ![](https://i.imgur.com/0m6c3lz.jpg)
+
 *Taken at Praha Hotel, 86 Violet Street, Sapa*
 
 ## Day 2

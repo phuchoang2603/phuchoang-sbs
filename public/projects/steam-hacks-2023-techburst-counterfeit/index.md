@@ -18,7 +18,9 @@ https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/
 - [ ] Search for products using NLP queries and provide recommendations
 - [ ] Assess product quality based on images, reviews, descriptions, etc.
 - [ ] Allow users to train or utilize the categorization model.
+
 https://github.com/phuchoang2603/techburst-counterfeit
+
 ## Simplifying Counterfeit Product Verification: A Journey of Implementing User-Friendly Solutions
 In an era where counterfeit products flood the market, safeguarding consumers from purchasing fraudulent items has become a pressing concern. As an individual passionate about leveraging technology to combat this issue, my recent venture involved implementing an application that enables users to easily verify the authenticity of products. The process, although challenging, led to the development of a robust solution that empowers users to make informed purchasing decisions.
 

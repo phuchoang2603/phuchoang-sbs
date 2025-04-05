@@ -96,7 +96,7 @@ First-time setup:
 1. Launch MeloNX via LiveContainer
 2. Choose your `prod.keys` and `title.keys` files
 3. Select your Switch firmware `.zip`
-4. Go to settings and **enable extended RAM**
+4. Go to settings and check to see if it has **JIT and extended RAM enabled**
 ![](https://i.imgur.com/1JVjXah.png)
 
 You're done! Just tap MeloNX from LiveContainer whenever you want to play, even offline. Add games (.NSP or .XCI) by tapping the ➕ button.

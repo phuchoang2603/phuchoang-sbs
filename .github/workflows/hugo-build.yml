@@ -3,8 +3,6 @@ name: hugo-build
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:

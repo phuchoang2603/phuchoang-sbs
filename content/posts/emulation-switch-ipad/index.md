@@ -22,7 +22,9 @@ If you thought the biggest gaming news was the upcoming Switch 2, think again. T
 Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
 However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
 Here's the difference between no JIT vs JIT-enabled when running emulator on iOS.
+
 [PPSSPP On iOS 17 (NO JIT vs JIT) iPhone XR](https://www.youtube.com/watch?v=zgdzy7q_dkU)
+
 ### What’s the Deal with StosVPN?
 Before you panic—no, this isn’t some sketchy data-harvesting VPN. **StosVPN doesn’t connect to external servers**; instead, it sets up a **self-contained VPN server** on your own device. That means:
 - **Zero** external connections
@@ -37,6 +39,7 @@ It’s a win-win, and it all runs through **MeloNX**, an iOS port of the Ryujinx
 2. **Keep required apps running in the background** – The setup is delicate; one wrong move can break it.
 3. **Use Shared Folders for file transfers** – Dragging gigabytes of game files via Google Drive, USB? No thanks—use [mounted shared folders](https://www.wikihow.com/Access-a-Shared-Folder-on-an-iPhone-or-iPad).
 ![](https://i.imgur.com/N4qPi89.png)
+
 ---
 ## Installing SideStore
 1. **Check prerequisites (no need to install Wireguard VPN as we will replace it with StosVPN) and pairing file instructions:** [SideStore Docs](https://docs.sidestore.io/docs/getting-started/prerequisites)
@@ -44,6 +47,7 @@ It’s a win-win, and it all runs through **MeloNX**, an iOS port of the Ryujinx
     - Download `jitterbugpair.exe`
     - Run it and transfer the `*.mobiledevicepairing` file to your phone
 ![](https://i.imgur.com/zrAO6vQ.png)
+
 3. **Install SideStore:**
     - Install **AltServer** [Windows Guide](https://docs.sidestore.io/docs/getting-started/windows)
     - Hold **Shift + Click** the AltServer tray icon and sideload the SideStore IPA
@@ -52,6 +56,7 @@ It’s a win-win, and it all runs through **MeloNX**, an iOS port of the Ryujinx
     - Open SideStore, pair it with the pairing file    
     - Refresh the app and remove previous AltServer certificates
 ![](https://i.imgur.com/T9DBMOM.png)
+
 ---
 ## Installing LiveContainer
 SideStore limits the number of installed apps to three, but **LiveContainer** bypasses this restriction. Here’s how to install it:
@@ -63,6 +68,7 @@ SideStore limits the number of installed apps to three, but **LiveContainer** by
 6. **Install a second instance of LiveContainer** via the main LiveContainer app.
 7. **In LiveContainer Settings: Set JIT Enabler to StikJIT (Another LiveContainer).**
 ![](https://i.imgur.com/IMz9BrU.png)
+
 ---
 ## Installing MeloNX & Enable StikJIT & Increasing RAM Limits
 Apple limits apps to using only half of the device’s RAM, but **GetMoreMemory** by HugeBlack bypasses this restriction.
@@ -70,16 +76,19 @@ Apple limits apps to using only half of the device’s RAM, but **GetMoreMemory*
 2. **Go to the Apps tab, add the latest StikJIT, MeloNX and memory entitlement** IPA files, and convert it into a shared app (hold -> settings).
 4. **Enable file picker & local notifications in MeloNX settings.**
 ![](https://i.imgur.com/WZShBKo.png)
+
 5. **Run memory entitlement and log into your account to enable the entitlement for:**
     - LiveContainer
     - LiveContainer2
     - MeloNX
     - If errors occur, clean up Keychain and try again.
 ![](https://i.imgur.com/7cBMAJR.png)
+
 1. **Reinstall LiveContainer & LiveContainer2** to apply the configuration.
 2. **Reinstall SideStore from the app (do not just refresh it).**
 3. **Upload the pairing file in StikJIT on LiveContainer2 and enable "Auto Quit After Enabling JIT."**
 ![](https://i.imgur.com/tfLnIbt.png)
+
 5. **Run MeloNX via LiveContainer1.**
 ---
 ## Adding keys, firmware, games on MeloNX
@@ -121,4 +130,5 @@ This guide was compiled from various sources and contributions:
 ## Final Thoughts
 Running _Tears of the Kingdom_ on an iPhone sounds like science fiction—but it’s real. Once it’s all set up, you’ll be gaming at full speed, offline, on hardware that was *should* be meant for this.
 Even crazier? This lays the groundwork for full-blown VM emulation. Some users are already running macOS Sonoma on iPad using UTM.
+
 ![](https://i.imgur.com/N3brNGL.png)

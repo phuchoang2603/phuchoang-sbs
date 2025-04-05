@@ -13,13 +13,16 @@ copyright = "2025 Felix"
 
 # whether to use robots.txt
 enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Pagination config
 [pagination]
   disableAliases = false
-  pagerSize = 10
+  pagerSize = 3
   path = "posts"
 
 # Menu config
@@ -58,13 +61,16 @@ enableEmoji = true
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "auto"
   dateFormat = "2006-01-02"
+  gitRepo = "https://github.com/phuchoang2603/phuchoang-sbs"
+  title = "Everyone, meet fel1x!"
+  description = "A blog about my life, my projects and my thoughts"
 
   [params.author]
     name = "Felix Hoang"
     email = "xuanphuc.a1gv@gmail.com"
 
   [params.header]
-    desktopMode = "fixed"
+    desktopMode = "auto"
     mobileMode = "auto"
     # Header title config
     [params.header.title]
@@ -151,7 +157,7 @@ enableEmoji = true
     # LoveIt NEW | 0.2.0 whether to enable the fontawesome extended syntax
     fontawesome = true
     # whether to show link to Raw Markdown content of the content
-    linkToMarkdown = true
+    linkToMarkdown = false
     # LoveIt NEW | 0.2.4 whether to show the full text content in RSS
     rssFullText = false
     # LoveIt NEW | 0.2.0 Table of the contents config
@@ -184,6 +190,26 @@ enableEmoji = true
       
     [params.page.share]
       enable = false
+
+    [params.page.comment]
+      enable = true
+      # giscus comment config (https://giscus.app/)
+      [params.page.comment.giscus]
+        # You can refer to the official documentation of giscus to use the following configuration.
+        enable = true
+        repo = "phuchoang2603/phuchoang-sbs"
+        repoId = "R_kgDOOUB0Ww"
+        category = "General"
+        categoryId = "DIC_kwDOOUB0W84Coz7q"
+        # automatically adapt the current theme i18n configuration when empty
+        lang = ""
+        mapping = "pathname"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "top"
+        lazyLoading = true
+        lightTheme = "light"
+        darkTheme = "dark"
 
 # Markup related configuration in Hugo
 [markup]

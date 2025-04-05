@@ -1,30 +1,29 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Everyone, meet fel1x</title>
-        <link>https://phuchoang.sbs/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>All Posts | Everyone, meet fel1x</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
-            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://phuchoang.sbs/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Run Nintendo Switch Games on iPhone at 60FPS – Free, No Jailbreak Needed</title>
-    <link>https://phuchoang.sbs/posts/emulation-switch-ipad/</link>
+    <link>http://localhost:1313/posts/emulation-switch-ipad/</link>
     <pubDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/emulation-switch-ipad/</guid>
+    <guid>http://localhost:1313/posts/emulation-switch-ipad/</guid>
     <description><![CDATA[<p>If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.</p>
 <data id="id-1" data-raw></data>
 <hr>
 <h2 id="the-jit-struggle">The JIT Struggle</h2>
 <p>Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
 However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
-Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator on iOS.
-<a href="https://www.youtube.com/watch?v=zgdzy7q_dkU" target="_blank" rel="noopener noreffer ">PPSSPP On iOS 17 (NO JIT vs JIT) iPhone XR</a></p>]]></description>
+Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator on iOS.</p>]]></description>
 </item>
 <item>
     <title>Automating Manga Translations: My Journey to a Seamless Reading Experience</title>
-    <link>https://phuchoang.sbs/posts/self-hosted-manga-trans/</link>
+    <link>http://localhost:1313/posts/self-hosted-manga-trans/</link>
     <pubDate>Mon, 03 Mar 2025 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/self-hosted-manga-trans/</guid>
+    <guid>http://localhost:1313/posts/self-hosted-manga-trans/</guid>
     <description><![CDATA[<h2 id="video-demo">Video demo:</h2>
 <data id="id-1" data-raw></data>
 <hr>
@@ -34,58 +33,39 @@ Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator 
 </item>
 <item>
     <title>Organizing My Digital Life - A Nerdy Journey Across Drives, File Management</title>
-    <link>https://phuchoang.sbs/posts/productitvity-file-management/</link>
+    <link>http://localhost:1313/posts/productitvity-file-management/</link>
     <pubDate>Thu, 16 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/productitvity-file-management/</guid>
+    <guid>http://localhost:1313/posts/productitvity-file-management/</guid>
     <description><![CDATA[<p>We all love the idea of being super organized, right? We make these grand plans, give it our all for a few weeks or months, and then, bam! We&rsquo;re back to the good old &ldquo;throw it in the downloads folder with everything else&rdquo; routine. It happens to the best of us, and I&rsquo;m guilty too. But hey, even though I&rsquo;ve still got loads of room for improvement, I can proudly say I&rsquo;ve gotten way faster at finding my files.</p>]]></description>
 </item>
 <item>
     <title>Organizing My Digital Life - How My Workspace Evolved from Chaos to Hackintosh</title>
-    <link>https://phuchoang.sbs/posts/productivity-workspace/</link>
+    <link>http://localhost:1313/posts/productivity-workspace/</link>
     <pubDate>Sat, 04 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/productivity-workspace/</guid>
+    <guid>http://localhost:1313/posts/productivity-workspace/</guid>
     <description><![CDATA[<p><em>This is the first blog in a series on how I organize my work process, both physically and online. This includes my workspace, file management, and planning.</em></p>
 <p>Today, I would like to introduce you to the journey of optimizing my workspace environment, or in simpler terms, my desk setup. In fact, I am not someone who strictly adheres to principles in life. However, I really enjoy working in a disciplined environment and always strive to optimize it for effective studying and working. To achieve the setup I have today, I had to tear down and rebuild this workstation more than 10 times. Finally, I am truly satisfied with it. It not only satisfies me aesthetically but also makes me eager to work as soon as I step into this room (well, not quite true because nowadays most of the time I feel most productive when working from a coffee shop&hellip;).</p>]]></description>
 </item>
 <item>
     <title>My STEAM Hacks 2023 experience</title>
-    <link>https://phuchoang.sbs/posts/hackathon-steam-hacks-2023/</link>
+    <link>http://localhost:1313/posts/hackathon-steam-hacks-2023/</link>
     <pubDate>Fri, 20 Oct 2023 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/hackathon-steam-hacks-2023/</guid>
+    <guid>http://localhost:1313/posts/hackathon-steam-hacks-2023/</guid>
     <description><![CDATA[<p><em>If you want to learn more about the technical details of how I built the app, please read the article here</em></p>
 <p>Today, I want to share my experience with you about the project I worked on during the Steam Hacks 2023 competition. Although my team did not win any major awards for this project, it was an incredible learning opportunity for me, particularly in terms of coding. Moreover, I also gained valuable insights into the collaborative process through working with my amazing new friend from Son La - Minh Chau.</p>]]></description>
 </item>
 <item>
     <title>Lesson Learned in Three-day Trip to Sapa Hope Center</title>
-    <link>https://phuchoang.sbs/posts/volunteer-sapa-hope-center/</link>
+    <link>http://localhost:1313/posts/volunteer-sapa-hope-center/</link>
     <pubDate>Thu, 30 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Felix Hoang</author>
-    <guid>https://phuchoang.sbs/posts/volunteer-sapa-hope-center/</guid>
+    <guid>http://localhost:1313/posts/volunteer-sapa-hope-center/</guid>
     <description><![CDATA[<p><em>This is my diary about the trip to Sapa Hope Center with 10 colleagues from Summit Education - a renowned English language teaching center in Hanoi. Therefore, this trip is aimed at fostering cultural exchange and teaching English and basic skills to students from Grade 1 to Grade 2 in Sapa, Lao Cai.</em></p>
 <h2 id="day-1">Day 1</h2>
-<p>After many days of anticipation for new tasks and challenges – my first time as a cameraman – on the charity trip to Sapa with Summit, today finally arrived. I woke up quite early, having only slept for 3 hours the night before. I should have slept more, but I woke up at 3:40 am. After brushing my teeth, I fumbled on my computer to download videos on photography tutorials from YouTube to watch and learn on the way (I was assigned to take photos even though I&rsquo;ve never held a camera before -))). I downloaded the videos and finished preparing my gear by 4:40 am, then called my dad to drive me.
-
-Upon arriving at the gathering point, I realized I was early af -)) However, that period was also when I started to play around and learn more about the camera. It was quite fascinating, to be honest, because like everything else, it has its own rules and standards that we can learn in a simple and understandable way. Having said that, after getting on the bus and starting to watch the videos I downloaded earlier, I only got a basic grasp of concepts like lens mm, aperture, shutter speed, ISO, &hellip; And I haven&rsquo;t learned anything about framing angles and positioning yet.
-
-At Sapa Hope Center, the most surprising thing for me was the extremely warm welcome from the kids. Although many of them couldn&rsquo;t speak Vietnamese (Sapa is a land of convergence for 5 different ethnic groups), they were enthusiastic and innocent. As soon as I arrived, the kids gave each of us a flower and a welcoming card, which they had drawn themselves. The drawings looked simple, but I believe they came from the sincere and innocent hearts of these little ones.
-
-During the self-introduction, I was quite surprised when the owner of the center turned out to be a young man (seemingly stepping out of &ldquo;Silent Sapa&rdquo;) who had studied abroad in Singapore. After visiting this place, he fell in love with it, despite numerous opportunities in the city. Even his relatives thought he was &ldquo;charmed&rdquo; (there is a local belief in enchantment being quite common here). He shared many stories about Sapa – the specially nutritious herbs, the underprivileged children lacking sufficient food, the uphill journey from home to school taking 2-3 hours each day, and more. Peter Thương, along with the kids at the center, made me feel moved every time I heard those genuine and simple stories.
-
-After having lunch and a break, we spent the entire afternoon getting to know each child individually to better understand their personalities. This helped us plan and manage the teaching program more effectively for the upcoming days. Despite having only known each other for a few hours, we engaged in drawing exercises, played games, and sang together, creating a strong bond. The room that day was filled with laughter.
-
-<em>The entire group introducing themselves and playing games</em>
-
-<em>The older members teaching the children how to draw</em>
-
-<em>Sharing and chatting together</em>
-
-<em>Playing the &ldquo;musical chairs&rdquo; game together</em>
-After finishing the activities, the sky had darkened, and we were quite tired from the day of travel. We decided to return to the hotel to rest.
-
-<em>Taken at Praha Hotel, 86 Violet Street, Sapa</em></p>]]></description>
+<p>After many days of anticipation for new tasks and challenges – my first time as a cameraman – on the charity trip to Sapa with Summit, today finally arrived. I woke up quite early, having only slept for 3 hours the night before. I should have slept more, but I woke up at 3:40 am. After brushing my teeth, I fumbled on my computer to download videos on photography tutorials from YouTube to watch and learn on the way (I was assigned to take photos even though I&rsquo;ve never held a camera before -))). I downloaded the videos and finished preparing my gear by 4:40 am, then called my dad to drive me.</p>]]></description>
 </item>
 </channel>
 </rss>

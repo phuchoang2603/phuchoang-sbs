@@ -60,6 +60,7 @@ SideStore is a sideloading tool (lets you install apps outside the App Store) th
     - Install **StosVPN** from the App Store and enable it    
     - Open SideStore, pair it with the pairing file    
     - Refresh the app and remove previous AltServer certificates
+
 **Why we need to refresh Sidestore (you may ask)?**
 Normally, Apple limits sideloaded apps (using a free developer account) to 7 days of usage before you have to “refresh” (i.e., re-sign the IPA with a new certificate).
 When you install SideStore using AltServer, it stops using AltServer’s certificate and instead creates its **own certificate**, managed within the app itself. This means you won’t need a computer later—just open SideStore on your phone and tap “Refresh” to handle everything automatically.

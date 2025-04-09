@@ -15,7 +15,8 @@
     <description><![CDATA[<p>If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.</p>
 <data id="id-1" data-raw></data>
 <hr>
-<h2 id="the-jit-struggle">The JIT Struggle</h2>
+<h2 id="background">Background</h2>
+<h3 id="what-is-jit-why-is-it-important-for-emulation">What is JIT? Why is it important for emulation?</h3>
 <p>Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
 However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
 Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator on iOS.</p>]]></description>

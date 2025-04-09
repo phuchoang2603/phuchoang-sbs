@@ -1,0 +1,68 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Project - Tag - Everyone, meet fel1x</title>
+        <link>http://localhost:1313/tags/project/</link>
+        <description>Project - Tag - Everyone, meet fel1x</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
+            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Fri, 20 Oct 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/project/" rel="self" type="application/rss+xml" /><item>
+    <title>TechBurst – Revolutionary AI Solution for Identifying Counterfeit Products</title>
+    <link>http://localhost:1313/projects/steam-hacks-2023-techburst-counterfeit/</link>
+    <pubDate>Fri, 20 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>http://localhost:1313/projects/steam-hacks-2023-techburst-counterfeit/</guid>
+    <description><![CDATA[<p>This is my product when participating in the STEAM Hacks 2023 competition. If you’re interested in delving deeper into the backstory and my journey throughout the competition, you can find the comprehensive details right here.</p>
+<p><a href="https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/" target="_blank" rel="noopener noreffer ">https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/</a></p>
+<h2 id="overview-of-the-main-application">Overview of the main application</h2>
+<h3 id="1-current-features">1. Current features:</h3>
+<ul>
+<li><i class="far fa-check-square fa-fw" aria-hidden="true"></i> C2C marketplace</li>
+<li><i class="far fa-check-square fa-fw" aria-hidden="true"></i> Detection of fake and real products using the Teachable Machine scanner</li>
+<li><i class="far fa-check-square fa-fw" aria-hidden="true"></i> Barcode scanner &amp; NLP Instruction</li>
+</ul>
+<h3 id="2-planned-features">2. Planned features:</h3>
+<ul>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> View sellers’ and buyers’ locations via Google Maps</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Bidding Algorithm</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Forecasting product demand and price changes (e.g. beecost…)</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Image tagging and recognition for product images</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Search for products using NLP queries and provide recommendations</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Assess product quality based on images, reviews, descriptions, etc.</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Allow users to train or utilize the categorization model.</li>
+</ul>
+<p><a href="https://github.com/phuchoang2603/techburst-counterfeit" target="_blank" rel="noopener noreffer ">https://github.com/phuchoang2603/techburst-counterfeit</a></p>]]></description>
+</item>
+<item>
+    <title>Reware Website – Refurbished electronics E-commerce Platform</title>
+    <link>http://localhost:1313/projects/steam-hacks-2023-reware-website/</link>
+    <pubDate>Wed, 12 Jul 2023 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>http://localhost:1313/projects/steam-hacks-2023-reware-website/</guid>
+    <description><![CDATA[<p>Built during the first round of STEAM Hacks 2023, Reware is a C2C marketplace inspired by platforms like eBay and Shopee. It enables users to buy and sell refurbished electronics and features self-serve kiosks for convenient device trade-ins. Reware promotes sustainable tech use by giving old devices a second life while offering users cash incentives.</p>
+<p></p>]]></description>
+</item>
+<item>
+    <title>Reware App – Ewaste Management Solutions</title>
+    <link>http://localhost:1313/projects/sft2022-reware-app/</link>
+    <pubDate>Wed, 09 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>http://localhost:1313/projects/sft2022-reware-app/</guid>
+    <description><![CDATA[<p>This is my product created while participating in Samsung Solve for Tomorrow 2022, a STEM contest organized by Samsung Electronic Company that encourages problem-solving skills and showcases the positive impact of young minds on society, with over 76,000 participants nationwide</p>
+<h2 id="demo">Demo</h2>
+<data id="id-1" data-raw></data>
+<h2 id="user-experience-case-study">User experience case study</h2>
+<p></p>]]></description>
+</item>
+<item>
+    <title>The Green Express – Initial Business Concept of Fostering Ewaste Reduction</title>
+    <link>http://localhost:1313/projects/basf-green-express/</link>
+    <pubDate>Thu, 09 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Felix Hoang</author>
+    <guid>http://localhost:1313/projects/basf-green-express/</guid>
+    <description><![CDATA[<p>This product emerged from my participation in the BASF Innovation Challenge, a national competition that empowers students to devise sustainability solutions, where we secured the 3rd Runner Up prize. While our aim was not the highest award, this competition established a robust foundation for me and our team to persist in researching and developing solutions to address the serious issue of e-waste</p>
+<h2 id="pitching">Pitching</h2>
+<data id="id-1" data-raw></data>
+<h2 id="applications-user-interface">Applications User Interface</h2>
+<data id="id-2" data-raw></data>]]></description>
+</item>
+</channel>
+</rss>

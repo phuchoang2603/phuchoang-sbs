@@ -1,7 +1,8 @@
 ---
 title: Reware Website – Refurbished electronics E-commerce Platform
 date: 2023-07-12
-tags: 
+tags:
+  - project
 description: 
 draft: false
 resources:

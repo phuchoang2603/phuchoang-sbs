@@ -2,7 +2,8 @@
 title: TechBurst – Revolutionary AI Solution for Identifying Counterfeit Products
 date: 2023-10-20
 description: 
-tags: 
+tags:
+  - project
 draft: false
 resources:
   - name: featured-image

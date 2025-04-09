@@ -2,7 +2,8 @@
 title: The Green Express – Initial Business Concept of Fostering Ewaste Reduction
 date: 2022-06-09
 description: 
-tags: 
+tags:
+  - project
 draft: false
 resources:
   - name: featured-image

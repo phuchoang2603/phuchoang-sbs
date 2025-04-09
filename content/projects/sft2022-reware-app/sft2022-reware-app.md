@@ -1,7 +1,8 @@
 ---
 title: Reware App – Ewaste Management Solutions
 date: 2022-11-09
-tags: 
+tags:
+  - project
 description: 
 draft: false
 resources:

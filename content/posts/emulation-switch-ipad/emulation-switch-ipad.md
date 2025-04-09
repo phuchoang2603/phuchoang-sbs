@@ -18,14 +18,15 @@ If you thought the biggest gaming news was the upcoming Switch 2, think again. T
 {{< /raw >}}
 
 ---
-## What is JIT? Why is it important for emulation?
+## Background
+### What is JIT? Why is it important for emulation?
 Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
 However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
 Here's the difference between no JIT vs JIT-enabled when running emulator on iOS.
 
 [PPSSPP On iOS 17 (NO JIT vs JIT) iPhone XR](https://www.youtube.com/watch?v=zgdzy7q_dkU)
 
-## StosVPN – Internal VPN for enabling JIT without internet
+### StosVPN – Internal VPN for enabling JIT without internet
 Unlike commercial VPNs that often collect user data, StosVPN simply creates a virtual VPN on the device itself, tricking the system into thinking a “trusted connection” is being made. This lets iOS enable JIT without needing an actual internet connection—boosting privacy and eliminating security risks.
 
 This is a breakthrough that allows Switch emulators to run fully offline with high performance.

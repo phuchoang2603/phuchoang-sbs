@@ -76,12 +76,10 @@ I initially tried deploying nginx as my ingress controller with cert-manager for
 That didn’t go smoothly:
 
 - I first attempted to use Traefik (RKE2’s default), but configuring it through HelmChart CRDs was too opaque and hard to control.
-    
 - Then I switched to nginx via a HelmChart manifest — but forgot to rename the `.j2` file to `.yaml`, which caused the Helm controller to silently fail.
-    
 - When I finally got the HelmChart to load, cert-manager couldn’t be fetched via remote repo URLs. I had to download the `.tgz`, base64 encode it, and inject it via the `chartContent` field manually.
-    
 - Even after that, cert-manager DNS-01 validation failed until I updated my DNS nameservers to use Cloudflare explicitly. The default nameserver (`/etc/resolv.conf`) pointed to an internal resolver, which tried to resolve external domains like `acme-staging-v02.api.letsencrypt.org.my-domain.local` — resulting in failed lookups.
+- In the end, I found out that I need to specify the DNS server when initialize in Terraform
     
 
 Eventually, I circled back to Traefik — mainly because I’m planning to integrate Authentik for application authentication, and Traefik makes that easier to manage with native middlewares and plugin support. I found [this issue](https://github.com/rancher/rke2/issues/5928) showing how to re-enable Traefik in RKE2 by simply setting the appropriate value in the HelmChart manifest — something that’s still not properly documented.
@@ -102,6 +100,8 @@ I also deployed [Longhorn](https://longhorn.io/docs/1.8.1/deploy/install/) for p
     
 
 I tested Longhorn access through Traefik and cert-manager to confirm that HTTPS access worked as expected.
+
+![](https://live.staticflickr.com/65535/54541161701_cee5d47fa4_b.jpg)
 
 ---
 

@@ -9,6 +9,7 @@ resources:
   - name: featured-image
     src: featured.jpg
 ---
+dit me nam
 If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.
 
 {{< raw >}}

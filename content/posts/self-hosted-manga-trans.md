@@ -79,15 +79,7 @@ Here’s my folder structure for Suwayomi:
 
 ---
 ## The First Steps: Getting the Basics Running
-The `manga-image-translator` repo supports both **Docker** and **local Python**. Initially, I tried Docker but found it lacking:
-- No file watching/auto-triggering
-- Dependency management was clunky
-
-So, I switched to the **Python local version**, which integrated smoothly with Suwayomi. Now, I just needed a way to automate the process.
-
-(*Interestingly, after several weeks, I switched back to using the Docker version, but this time with an added batch-script setup and my own configuration.*)
-
-The first version of my script was simple:
+The `manga-image-translator` repo seems pretty solid at first try. It provide me the default script that can translate multiple chapters at once.
 1. Scan the **INPUT_FOLDER** (.i.e. the `downloads` folder I set up above) for new chapters.
 2. Run the manga translator command.
 3. Save the output in a matching **OUTPUT_FOLDER**. (.i.e the `translated` folder)
@@ -102,7 +94,7 @@ conda create -n manga-trans python=3.12 pip
 python -m manga_translator local -v -i ../suwayomi/data/downloads/mangas/Rawkuma\ \(JA\)/Grapara\!\ Raw/Chapter\ 13/ --output ../suwayomi/data/translated/Grapara\!\ Raw\ translated/Chapter\ 13/ --use-gpu --config-file examples/config-example.json
 ```
 
-This worked, but there was one big problem: **it wasn’t fully automated**. I had to manually re-run the script every time a new chapter arrived. Clearly, there had to be a better way.
+This worked, but there was one big problem: **it wasn’t fully automated** and has a lot of command flags that I need to remember. I had to manually re-run the script every time a new chapter arrived. Clearly, there had to be a better way.
 
 ---
 ## Automating the Pipeline: Watching for New Manga Chapters
@@ -131,6 +123,7 @@ OUTPUT_ROOT = "data/translated"
 CONFIG_FILE = "examples/config-example.json"
 # ==========================
 
+
 class TranslationHandler(FileSystemEventHandler):
     def on_created(self, event):
         if event.is_directory:
@@ -141,28 +134,34 @@ class TranslationHandler(FileSystemEventHandler):
         # Get relative path from input root
         relative_path = os.path.relpath(input_path, INPUT_ROOT)
         dest_path = os.path.join(OUTPUT_ROOT, relative_path)
-        
+
         # Create output directory if it doesn't exist
         os.makedirs(dest_path, exist_ok=True)
 
         command = [
-            "python", "-m", "manga_translator", "local",
+            "python",
+            "-m",
+            "manga_translator",
+            "local",
             "-v",
-            "-i", input_path,
-            "--dest", dest_path,
-            "--config-file", CONFIG_FILE,
-            "--use-gpu"
+            "-i",
+            input_path,
+            "--dest",
+            dest_path,
+            "--config-file",
+            CONFIG_FILE,
+            "--use-gpu",
         ]
 
         try:
             print(f"Starting translation for: {relative_path}")
-            result = subprocess.run(command, check=True, capture_output=True, text=True)
+            subprocess.run(command, check=True)
             print(f"Successfully translated: {relative_path}\n")
-            print("Output:", result.stdout)
         except subprocess.CalledProcessError as e:
             print(f"Error translating {relative_path}:")
-            print("Error:", e.stderr)
-            print("Command executed:", ' '.join(command))
+            print(f"The command failed with return code {e.returncode}")
+            print("Command executed:", " ".join(command))
+
 
 def main():
     # Validate paths
@@ -186,6 +185,7 @@ def main():
         observer.stop()
     observer.join()
 
+
 if __name__ == "__main__":
     main()
 ```
@@ -196,7 +196,7 @@ I wanted the script to **run 24/7** without manually starting it each time. Ther
 1. Run the Python script as a **systemd service** (requires tinkering with conda).
 2. Run it as a Docker container (recommended)."*
 
-### Option 1: systemd Service (for local installs)
+### Option 1: systemd Service (for local installs, not recommended)
 1. Created a new service file:
 ```bash
 sudo nano /etc/systemd/system/manga-trans.service
@@ -223,72 +223,67 @@ sudo systemctl enable manga-trans.service
 sudo systemctl start manga-trans.service
 ```
 
-### Option 2: Docker Container (Recommended)
-Rather than relying on conda, I containerized the entire application. Here's my `docker-compose.yml` setup for the full stack:
+### Option 2: Docker Container (recommended)
+Rather than relying on conda, I containerized the entire application and push it to my own registry. To run it, you must first create a .env file to specify where the data gonna stored.
+```
+MANGA_FOLDER=/mnt/storage/media/manga
+APPDATA=/mnt/storage/appdata/suwayomi
+TZ=America/New_York
+```
+
+You also need to change the default location where the new manga will be download to in the Suwayomi web interface.
+
+![](https://i.ibb.co/Ww5S681/image.png)
+
+
+Here's my `docker-compose.yml` setup for the full stack deployment.
+
 ```yaml
 name: suwayomi
 services:
-    suwayomi:
-        container_name: suwayomi
-        environment:
-            - EXTENSION_REPOS=["https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json"]
-            - FLARESOLVERR_ENABLED=true
-            - FLARESOLVERR_URL=http://flaresolverr:8191
-            - TZ=America/New_York
-        hostname: suwayomi
-        image: ghcr.io/suwayomi/suwayomi-server:preview
-        networks:
-            - suwayomi
-        ports:
-            - 4567:4567
-        restart: always
-        volumes:
-            - ./data:/home/suwayomi/.local/share/Tachidesk
-    
-    flaresolverr:
-        container_name: flaresolverr
-        environment:
-            TZ: America/New_York
-        hostname: flaresolverr
-        image: ghcr.io/flaresolverr/flaresolverr:latest
-        networks:
-            - suwayomi
-        ports:
-            - 8191:8191
-        restart: unless-stopped
-    
-    manga-image-translator:
-        build:
-            context: ./manga-image-translator
-        container_name: manga-image-translator
-        command: batch-script.py
-        volumes:
-        - ./manga-image-translator/result:/app/result
-        - ./manga-image-translator/detection:/app/detection
-        - ./manga-image-translator/fonts:/app/fonts
-        - ./manga-image-translator/inpainting:/app/inpainting
-        - ./manga-image-translator/ocr:/app/ocr
-        - ./manga-image-translator/text_mask:/app/text_mask
-        - ./manga-image-translator/text_rendering:/app/text_rendering
-        - ./manga-image-translator/translators:/app/translators
-        - ./manga-image-translator/textblockdetector:/app/textblockdetector
-        - ./manga-image-translator/textline_merge:/app/textline_merge
-        - ./manga-image-translator/translate_demo.py:/app/translate_demo.py
-        - ./manga-image-translator/web_main.py:/app/web_main.py
-        - ./manga-image-translator/ui.html:/app/ui.html
-        - ./data/:/app/data/
-        - ./facehuggingcache:/root/.cache/huggingface/
-        ipc: host
-        # For GPU
-        deploy:
-         resources:
-           reservations:
-             devices:
-               - capabilities: [gpu]
+  suwayomi:
+    container_name: suwayomi
+    environment:
+      - EXTENSION_REPOS=["https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json"]
+      - FLARESOLVERR_ENABLED=true
+      - FLARESOLVERR_URL=http://flaresolverr:8191
+      - TZ=${TZ}
+    hostname: suwayomi
+    image: ghcr.io/suwayomi/suwayomi-server:preview
+    ports:
+      - 4567:4567
+    restart: always
+    volumes:
+      - ${MANGA_FOLDER}:/home/suwayomi/data
+      - ${APPDATA}/data:/home/suwayomi/.local/share/Tachidesk
 
-networks:
-    suwayomi:
-        external: true
+  flaresolverr:
+    container_name: flaresolverr
+    environment:
+      - TZ=${TZ}
+    hostname: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    ports:
+      - 8191:8191
+    restart: unless-stopped
+
+  manga-image-translator:
+    # build:
+    #   context: ${APPDATA}/manga-image-translator
+    image: ghcr.io/phuchoang2603/manga-image-translator:v0.1.0
+    container_name: manga-image-translator
+    command: batch-script.py
+    volumes:
+      - ${APPDATA}/manga-image-translator/:/app/
+      - ${APPDATA}/facehuggingcache:/root/.cache/huggingface/
+      - ${MANGA_FOLDER}:/app/data
+    ipc: host
+    # For GPU
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
 ```
 
 Now, it runs in the background **automatically** whenever I download a new manga chapter. No more waiting, no more manual intervention—just seamless reading.

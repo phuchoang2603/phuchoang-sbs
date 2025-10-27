@@ -160,9 +160,7 @@ Here's my school's configuration:
 
 ## (Optional) Install NextDNS to have local DNS resolution and Ads Blocking on the go
 
-I think I will write more about NextDNS in another article, maybe in my [[homelab-networking]] series. But for now, it is my main DNS server to resolve my Kubernetes Traefik resolutions, for ad-blocking services, and for parental controls to limit myself from doom-scrolling too much.
-
-Installing it was easier than Tailscale. Just get the NextDNS configuration profile ID, paste it in after you install the package, and you're good to go.
+If you want more detail on how I set up NextDNS and Tailscale, you can read it [here](https://phuchoang.sbs/posts/self-hosted-network-design/). But for now, it is my main DNS server to resolve my Kubernetes Traefik resolutions, for ad-blocking services, and for parental controls to limit myself from doom-scrolling too much. Installing it was easier than Tailscale. Just get the NextDNS configuration profile ID, paste it in after you install the package, and you're good to go.
 
 1. Go to System -> Software
 2. Click the "Update lists" button

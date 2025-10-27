@@ -40,6 +40,9 @@ Next, I got into AI before ChatGPT was cool. I found a program called **Stable D
 
 But the most meaningful thing I built was for my family. I connected our existing security cameras to a program called **Frigate**. Using the graphics card, Frigate is smart enough to tell the difference between a person walking up to our door and just a tree swaying in the wind. I then hooked Frigate into **Home Assistant**, which is like a central brain for smart home gadgets. Now, if someone is walking around our house late at night, my entire family gets an alert on their phones with a picture of what’s happening. It’s given us some real peace of mind, all powered by that old office PC.
 
+![](https://i.ibb.co/Qs1ZKtv/image.png)
+
+
 ### The Obsession and the Path Forward
 
 I was officially hooked. I found online communities like the `r/selfhosted` and `r/homelab` subreddits and discovered I wasn't alone. There are tons of people out there building amazing things in their own homes.

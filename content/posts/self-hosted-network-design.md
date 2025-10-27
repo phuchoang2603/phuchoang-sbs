@@ -19,7 +19,7 @@ This post is a tour of my home network, built on that `OpenWRT` router. I'll wal
 
 
 ## Planning the Network
-Currently, this router is configured as a [cascaded router behind another router (double NAT)](https://openwrt.org/docs/guide-user/network/switch_router_gateway_and_nat#openwrt_as_cascaded_router_behind_another_router_double_nat). So it is also a DHCP server, which I have set up as `10.69.0.0/16`, to give IPs to the client devices. It has the total capacity of giving `256*256=65536` IPs. So my network design is:
+Currently, this router is configured as a [cascaded router behind another router (double NAT)](https://openwrt.org/docs/guide-user/network/switch_router_gateway_and_nat#openwrt_as_cascaded_router_behind_another_router_double_nat). So it is also a DHCP server, which subnet is `10.69.0.0/16`, to give IPs to the client devices. It has the total capacity of giving `256*256=65536` IPs:
 - Physical devices (fixed): 10.69.0.1 to 10.69.0.255 (255 ips)
 - Proxmox VMs: 10.69.1.1 to 10.69.1.255 (255 ips)
 - Kubernetes load balancers: 10.69.2.1 to 10.69.2.255 (255 ips)
@@ -27,9 +27,10 @@ Currently, this router is configured as a [cascaded router behind another router
 
 ![](https://i.ibb.co/DP4jbkXw/image.png)
 
+I also plan to learn how to set up VLANs for additional security and a separate environment, but that requires a managed switch, which is kinda expensive. For now, it has done an awesome job of being a router, giving IPs and helping the clients connect to the internet. But it also needs to provide DNS for the client devices too.
 
 ## Blocking Ads and Local DNS
-On the DNS side, I initially used an `AdGuard` local server hosted directly on the `Xiaomi CR6608` to provide DNS for clients. But after running it for a while for my family, I found out that my device couldn't hold up under all the load, so it constantly went down. And also, when I wanted to go out, if I wanted to get the same DNS setup as when I was at home, I needed to configure a lot more to get it working.
+On the DNS side, I initially used an `AdGuard` local server hosted directly on the `Xiaomi CR6608` to provide DNS for clients. But after running it for a while for my family, I found out that my device couldn't hold up long when multiple devices trying to connect; it kept restarting after experiencing too much load. And also, when I wanted to go out, if I wanted to get the same DNS setup as when I was at home, I needed to configure a lot more to get it working.
 
 So in the end, I chose to use `NextDNS` as my primary DNS solution. With [luci-app-nextdns](https://github.com/nextdns/nextdns/wiki/OpenWRT) in the `OpenWRT` packages, my router gets the profile ID for my `NextDNS` profile and then advertises it so that every client can also have it. What's more, I can still configure my iPhone to have an HTTPS DNS Profile for `NextDNS` when I go outside.
 

@@ -80,7 +80,7 @@ For a long time while working with my homelab, I only had a single PC at one pla
 
 The interesting thing about a switch is that not only does it expand your LAN ports, it's also capable of helping the computers talk directly to each other, without having to go through the "middle-man"—the router. Think of it as a simple roundabout that connects all the local streets, with the big highway being the router. You can go from one street to another easily, and you can also get on the highway if you want to. This offloads the job from the router (which is like a toll booth on the highway), improving internal throughput and performance.
 
-"However, with only one LAN port per computer, all my traffic was forced onto the same network. This means the high-speed Proxmox cluster communication (checking if nodes are online), VM traffic, and any storage traffic were all competing on the same, single 1Gbps "road." This **congestion** was the root cause of my problem: critical cluster packets were being dropped, causing my nodes to think their partners were offline. One day, I was browsing the internet for solutions when I found this comment from _North Idaho Tom Jones_ on the [Proxmox forum](https://forum.proxmox.com/threads/pve-cluster-nodes-frequently-go-offline.153517/):
+However, with only one LAN port per computer, all my traffic was forced onto the same network. This means the high-speed Proxmox cluster communication (checking if nodes are online), VM traffic, and any storage traffic were all competing on the same, single 1Gbps "road." This **congestion** was the root cause of my problem: critical cluster packets were being dropped, causing my nodes to think their partners were offline. Thanks for this comment from _North Idaho Tom Jones_ on the [Proxmox forum](https://forum.proxmox.com/threads/pve-cluster-nodes-frequently-go-offline.153517/), I was able to find the solution:
 
 > *IMO - some things to look at your cluster communications :*  
 > *- How fast are your physical network interfaces ( 100-Meg , 1-Gig , 10-Gig , something faster ).*  
@@ -120,11 +120,11 @@ This process taught me some valuable lessons:
 
 Now that the physical foundation is laid, it's time to build on top of it. In the next part of this series, I'll dive into the software that brings this hardware to life. We'll cover:
 
-1. **Creating a ZFS-based NAS:** How I'm using TrueNAS (or Proxmox's built-in ZFS) to manage my 6TB of storage.
+1. Creating a ZFS-based NAS: How I'm using **TrueNAS** (or Proxmox's built-in ZFS) to manage my 6TB of storage.
     
-2. **Spinning up the Kubernetes Cluster:** We'll provision the VMs that will form our 3-node k8s cluster.
+2. Spinning up the Kubernetes Cluster: We'll provision the VMs that will form our 3-node k8s cluster using **Terraform** and **Ansible** with [this project](https://6626a76c.phuchoang-sbs.pages.dev/projects/kubernetes-proxmox/).
     
-3. **Automating Everything with GitOps:** Finally, I'll show you how I use ArgoCD to automatically deploy and manage all my applications (Jellyfin, Frigate, and more) on Kubernetes.
+3. Automating Everything with GitOps: Finally, I'll show you how I use **ArgoCD** to automatically deploy and manage all my applications (Jellyfin, Frigate, and more) on Kubernetes.
     
 
 Stay tuned!

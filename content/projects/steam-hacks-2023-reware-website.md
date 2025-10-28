@@ -2,8 +2,9 @@
 title: Reware Website – Refurbished electronics E-commerce Platform
 date: 2023-07-12
 tags:
-  - project
-description: 
+  - figma
+  - hackathon
+description:
 draft: false
 resources:
   - name: featured-image

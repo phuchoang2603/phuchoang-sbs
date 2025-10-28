@@ -12,6 +12,7 @@ resources:
   - name: featured-image
     src: featured.jpg
 ---
+
 This project automates the provisioning and configuration of a RKE2 Kubernetes on **Proxmox** using **Terraform** and **Ansible**, with following features:
 
 - `AWS S3` for `Terraform` remote state
@@ -23,8 +24,12 @@ This project automates the provisioning and configuration of a RKE2 Kubernetes o
 - `Longhorn` for persistent storage
 - `ArgoCD` for GitOps deployment
 
-- Blog post: <https://phuchoang.sbs/posts/terraform-ansible-proxmox-k8s/>
-- Video demo:
+
+Repo link: https://github.com/phuchoang2603/kubernetes-proxmox
+
+Blog post: https://phuchoang.sbs/posts/terraform-ansible-proxmox-k8s
+
+Video demo:
 
 {{< raw >}}
   <div>

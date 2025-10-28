@@ -6,7 +6,6 @@ tags:
   - devops
   - kubernetes
   - proxmox
-  - project
 draft: false
 resources:
   - name: featured-image

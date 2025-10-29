@@ -1,0 +1,16 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Everyone, meet fel1x"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "A blog about my life, my projects and my thoughts"
+
+["params.author"]
+name = "Felix Hoang"
+headline = "cs student @ USF"

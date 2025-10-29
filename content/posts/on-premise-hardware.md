@@ -7,8 +7,8 @@ tags:
   - proxmox
 draft: false
 resources:
-  - name: featured-image
-    src: featured.jpg
+  - name: featured-image-preview
+    src: on-premise-hardware.jpg
 ---
 You might have heard about the recent AWS outage that caused many services to go down. To think that half of the internet relies on a single service is crazy, even if it might be the best in its field. The engineers at AWS have done many things to prevent this, such as high availability, multi-region, zones, etc., but if a critical part of it still goes down, the whole thing goes down too. Therefore, if you don't want to give all your money and trust to a single company, you might want to explore the on-premise option, which is self-hosting.
 

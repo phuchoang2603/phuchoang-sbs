@@ -4,10 +4,11 @@ autoSwitchAppearance = true
 enableA11y = false
 enableSearch = true
 enableCodeCopy = true
-replyByEmail = false
+replyByEmail = true
 disableImageOptimization = false
 disableImageOptimizationMD = false
 disableTextInHeader = false
+defaultBackgroundImage = "img/fireflies.svg"
 hotlinkFeatureImage = false
 fingerprintAlgorithm = "sha512"
 giteaDefaultServer = "https://git.fsfe.org"
@@ -35,7 +36,6 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "img/fireflies.svg"
 showRecent = true
 showRecentItems = 6
 showMoreLink = true
@@ -71,12 +71,14 @@ showTaxonomies = false
 showCategoryOnly = false
 showAuthorsBadges = false
 showWordCount = true
+showComments = true
 showZenMode = true
 
 [list]
-showHero = false
+showHero = true
+heroStyle = "background"
 layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = true
+layoutBackgroundHeaderSpace = false
 showBreadcrumbs = false
 showSummary = true
 showViews = false
@@ -94,7 +96,8 @@ excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
 showTermCount = true
-showHero = false
+showHero = true
+heroStyle = "background"
 showBreadcrumbs = false
 showViews = false
 showLikes = false
@@ -102,7 +105,8 @@ showTableOfContents = false
 cardView = false
 
 [term]
-showHero = false
+showHero = true
+heroStyle = "background"
 showBreadcrumbs = false
 showViews = false
 showLikes = false

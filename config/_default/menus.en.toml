@@ -5,7 +5,7 @@ none = "none"
 name = "projects"
 pageRef = "projects"
 identifier = "Ez6VcXNbBT"
-weight = 2
+weight = 3
 
 [[main]]
 name = "posts"
@@ -17,7 +17,19 @@ weight = 1
 name = "about"
 pageRef = "about"
 identifier = "uFD0NTcpGb"
-weight = 3
+weight = 5
+
+[[main]]
+name = "tags"
+pageRef = "tags"
+identifier = "7nu1rXdm40"
+weight = 4
+
+[[main]]
+name = "series"
+pageRef = "series"
+identifier = "AlUkTYii75"
+weight = 2
 
 [[footer]]
 none = "none"

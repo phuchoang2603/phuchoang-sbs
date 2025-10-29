@@ -2,22 +2,22 @@
 none = "none"
 
 [[main]]
-name = "projects"
-pageRef = "projects"
-identifier = "Ez6VcXNbBT"
-weight = 3
-
-[[main]]
-name = "posts"
+name = "/posts"
 pageRef = "posts"
 identifier = "hJO3Y1U6p5"
 weight = 1
 
 [[main]]
-name = "about"
-pageRef = "about"
-identifier = "uFD0NTcpGb"
-weight = 5
+name = "series"
+pageRef = "series"
+identifier = "AlUkTYii75"
+weight = 2
+
+[[main]]
+name = "/projects"
+pageRef = "projects"
+identifier = "Ez6VcXNbBT"
+weight = 3
 
 [[main]]
 name = "tags"
@@ -26,10 +26,16 @@ identifier = "7nu1rXdm40"
 weight = 4
 
 [[main]]
-name = "series"
-pageRef = "series"
-identifier = "AlUkTYii75"
-weight = 2
+name = "/about"
+pageRef = "about"
+identifier = "uFD0NTcpGb"
+weight = 5
+
+[[main]]
+pre = "github"
+url = "https://github.com/phuchoang2603"
+identifier = "7Bl722PjRr"
+weight = 9_999
 
 [[footer]]
 none = "none"

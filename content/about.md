@@ -1,7 +1,9 @@
 ---
 title: Welcome to my blog!
 date: 2025-04-04
-layout: "simple"
+showTaxonomies: false
+showTableOfContents: false
+layoutBackgroundHeaderSpace: false
 ---
 ## How I got here
 Hey! I'm **Hoang Xuan Phuc**, but everyone just calls me **Felix**.

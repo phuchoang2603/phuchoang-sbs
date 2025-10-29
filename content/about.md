@@ -1,35 +1,33 @@
 ---
 title: Welcome to my blog!
-description: Learn more about me and why I am starting this blog.
 date: 2025-04-04
+layout: "simple"
 ---
-## About me
+## How I got here
+Hey! I'm **Hoang Xuan Phuc**, but everyone just calls me **Felix**.
 
-Greetings! I am **Hoang Xuan Phuc**, but you can simply address me as **Felix**.
+I'm a CompSci student at the University of South Florida (USF), hailing from Vietnam. Growing up, my life was basically a script: Wake up at 6 a.m., school at 7, extra school at 5, eat, sleep, repeat. That was my loop until 5th grade, when my mom gifted me an old laptop.
 
-Since you’ve taken the time to explore my corner of the internet, I suppose it’s only fair to share a bit more about myself. You might notice that I don’t often open up like this in the offline world—I tend to be somewhat of an introvert. That said, I genuinely enjoy meeting new people and engaging in meaningful conversations. It’s just that, for some reason, talking about myself can be a bit of a challenge.
+My first thought? Games. But that dream died _fast_. I quickly realized I owned a "potato laptop" after trying to run some random FPS (you know, back when they still used `Adobe Flash Player`). Sure, it was _playable_, but the lag was so bad I'd have to be a psychic to get a shot in before getting blasted.
 
-Perhaps it’s a matter of communication skills. I’ve sometimes struggled to articulate my thoughts, especially when diving into complex ideas. But don’t get me wrong; I’m confident in my ability to strike up a conversation with just about anyone, even strangers. It’s as if my brain goes into overdrive, overthinking every word when I’m attempting to present information. But does an introduction really have to be so complex? I doubt it, right?
+Being a problem-solving nerd, I got hooked on a new question: **How do I make this thing _not_ suck?**
 
-Then there’s the notion that maybe there isn’t all that much to tell about me. When someone asks me to talk about myself, I sometimes feel like I should provide a comprehensive biography dating back to my birth. The truth is, even that wouldn’t take more than a minute to recount. What I’ve come to realize, though, is that the subject I could talk about endlessly is the future and the plans I’ve always envisioned.
+So, thanks to `Google` and `QuanTriMang.com`, I went down the rabbit hole of 20-step optimization guides. I was editing startup programs in `msconfig.exe`, killing services in `services.msc`, and even foolishly trying to "download more RAM" by messing with `pagefile.sys` (protip: don't do this). Honestly, every megabyte of RAM I freed up was a bigger rush than actually playing the game.
 
-But that’s not entirely ideal, is it? I don’t want to be the kind of person who can only talk about their hypothetical future while neglecting their actual past. I’m well aware that our lives are shaped by our experiences and the lessons we’ve learned from the challenges we’ve faced. Yet, if you can’t recall those experiences or share them with others, it can feel like a missed opportunity.
+This tinkering addiction escalated. Before I knew it, I'd installed Linux, ditching games entirely just for the _theory_ of more speed. And man, the learning curve wasn't a curve, it was a cliff. I spent more time fixing the OS than using it.
 
-So, here’s the reason behind this website. It’s a place where I hope to bridge the gap between my past and my future, sharing my journey, experiences, and thoughts with you and anyone else who stumbles upon it. It’s a way for me to reflect, remember, and, hopefully, inspire others along the way.
+- Touch-pad scrolls too fast? Have fun digging in random config files.
+- Can't type? Oh, right, I'm in `vim`. Press `i` for `Insert Mode`.
+- Okay, typed my line... now **how the hell do I save and quit???**
 
-Here's some more interesting facts about me:
+Yeah, it was annoying. But it was also _so much fun_. I realized I love this stuff—digging into the guts of a computer and making it my own.
 
-| **Field**     | **Information**                    |
-|---------------|------------------------------------|
-| Birthday      | 26.03.2006                         |
-| Nationality   | Vietnamese                         |
-| Email         | xuanphuc.a1gv@gmail.com            |
-| Study         | University of South Florida        |
-| Major         | Computer Science                   |
+The only problem? My brain isn't big enough to remember all the commands and weird tricks. Every time I'd reinstall or get a new PC, I'd waste hours hunting down the same guides and my own notes.
 
-## Resume
+**So, this blog is my solution.** It's basically my public brain-dump. A place to store my "hidden recipes" and all the cool (or weird) stuff I find. It's my personal notebook, my journey, and maybe—just maybe—it'll inspire you to break... er, I mean, _tinker_ with your own stuff, too.
 
-If you have an interest in learning more about my technical background, I am more than willing to share it with you.
+## My "On-Paper" Stats
+Alright, enough stories. If you're interested in my professional journey, my skills, and all that "hire me" stuff, you can find the details in the resume I've embedded below.
 
 {{< raw >}}
   <div>

@@ -7,9 +7,7 @@ tags:
   - kubernetes
   - proxmox
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
 ---
 
 This project automates the provisioning and configuration of a RKE2 Kubernetes on **Proxmox** using **Terraform** and **Ansible**, with following features:

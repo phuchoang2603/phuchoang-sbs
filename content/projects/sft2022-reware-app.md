@@ -7,9 +7,7 @@ tags:
   - hackathon
 description:
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
 ---
 
 This is my product created while participating in Samsung Solve for Tomorrow 2022, a STEM contest organized by Samsung Electronic Company that encourages problem-solving skills and showcases the positive impact of young minds on society, with over 76,000 participants nationwide

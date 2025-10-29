@@ -7,12 +7,10 @@ tags:
   - devops
   - kubernetes
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
+series: ["Provision k8s on Proxmox"]
+series_order: 1
 ---
-*Here's the link to my next optimized version: https://phuchoang.sbs/posts/terraform-ansible-proxmox-k8s-2/* 
-
 Hi everyone! Have you ever tried using AWS, GCP, or Azure? It’s an amazing experience, right? The ability to spin up a couple of VMs, a Kubernetes (K8s) cluster, set up load balancers, high availability — all in just a few clicks. You can focus entirely on developing your product. I mean, yeah, why bother with the hassle of learning how all of that works under the hood?
 
 Well... until the cost of cloud services hits you hard. If you just need to run small stuff, or deploy a simple demo web app for showcase purposes, no big deal — as long as you still have free credits from the cloud provider. But if you want to keep using those services, you either have to pay or keep creating fake emails or credit cards to hunt for whatever free credits are left.

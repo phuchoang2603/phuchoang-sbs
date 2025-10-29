@@ -5,9 +5,7 @@ tags:
   - productivity
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
 ---
 
 We all love the idea of being super organized, right? We make these grand plans, give it our all for a few weeks or months, and then, bam! We're back to the good old "throw it in the downloads folder with everything else" routine. It happens to the best of us, and I'm guilty too. But hey, even though I've still got loads of room for improvement, I can proudly say I've gotten way faster at finding my files.

@@ -5,9 +5,7 @@ tags:
   - self-hosted
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
 ---
 
 ## Video demo:

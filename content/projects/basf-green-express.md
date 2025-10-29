@@ -6,9 +6,7 @@ tags:
   - figma
   - hackathon
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage:
 ---
 
 This product emerged from my participation in the BASF Innovation Challenge, a national competition that empowers students to devise sustainability solutions, where we secured the 3rd Runner Up prize. While our aim was not the highest award, this competition established a robust foundation for me and our team to persist in researching and developing solutions to address the serious issue of e-waste

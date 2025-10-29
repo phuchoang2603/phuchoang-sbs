@@ -1,9 +1,12 @@
 ---
 title: Welcome to my blog!
 date: 2025-04-04
-layout: "simple"
+layout: "zen"
+layoutBackgroundHeaderSpace: false
 ---
+
 ## How I got here
+
 Hey! I'm **Hoang Xuan Phuc**, but everyone just calls me **Felix**.
 
 I'm a CompSci student at the University of South Florida (USF), hailing from Vietnam. Growing up, my life was basically a script: Wake up at 6 a.m., school at 7, extra school at 5, eat, sleep, repeat. That was my loop until 5th grade, when my mom gifted me an old laptop.
@@ -27,10 +30,13 @@ The only problem? My brain isn't big enough to remember all the commands and wei
 **So, this blog is my solution.** It's basically my public brain-dump. A place to store my "hidden recipes" and all the cool (or weird) stuff I find. It's my personal notebook, my journey, and maybe—just maybe—it'll inspire you to break... er, I mean, _tinker_ with your own stuff, too.
 
 ## My "On-Paper" Stats
+
 Alright, enough stories. If you're interested in my professional journey, my skills, and all that "hire me" stuff, you can find the details in the resume I've embedded below.
 
 {{< raw >}}
+
   <div>
 <iframe src="https://drive.google.com/file/d/1ye26b7lhhNWg9lFJXsnjoLQZde4hYkBE/preview" style="width: 100%; min-height: 720px; border: none;" allow="autoplay"></iframe>
   </div>
 {{< /raw >}}
+

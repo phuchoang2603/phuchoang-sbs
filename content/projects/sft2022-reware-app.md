@@ -7,6 +7,7 @@ tags:
   - hackathon
 description:
 draft: false
+layout: "zen"
 featureimage: https://i.ibb.co/ZRcQdyTB/reware.webp
 ---
 

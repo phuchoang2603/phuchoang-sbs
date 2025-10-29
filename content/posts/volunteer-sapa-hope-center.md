@@ -5,9 +5,7 @@ tags:
   - volunteer
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.imgur.com/7iJYMw8.jpg
 ---
 
 *This is my diary about the trip to Sapa Hope Center with 10 colleagues from Summit Education - a renowned English language teaching center in Hanoi. Therefore, this trip is aimed at fostering cultural exchange and teaching English and basic skills to students from Grade 1 to Grade 2 in Sapa, Lao Cai.*

@@ -7,11 +7,8 @@ tags:
   - hackathon
   - flutter
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.ibb.co/KjcCfpzF/image.png
 ---
-
 This is my product when participating in the STEAM Hacks 2023 competition. If you’re interested in delving deeper into the backstory and my journey throughout the competition, you can find the comprehensive details right here.
 
 https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/

@@ -7,12 +7,10 @@ tags:
   - devops
   - kubernetes
 draft: false
-resources:
-- name: "featured-image"
-  src: "featured.jpg"
+featureimage: https://live.staticflickr.com/65535/54541161701_cee5d47fa4_b.jpg
+series: ["Provision k8s on Proxmox"]
+series_order: 2
 ---
-*Here's the link to my previous blog post on this journey: https://phuchoang.sbs/posts/terraform-ansible-proxmox-k8s/*
-
 Over the past few days, I tried deploying an RKE2 Kubernetes cluster on my home Proxmox setup. My initial setup worked, but it quickly became apparent that things weren’t stable or sustainable. RKE2’s auto-deployment behavior, the embedded etcd database, and service load balancing all caused performance and manageability issues. It wasn’t “buggy” in the literal sense, but definitely felt rigid and inefficient — not something I would consider a best-practice deployment for a long-term homelab setup.
 
 So I decided to start refactoring the cluster.

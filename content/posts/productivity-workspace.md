@@ -5,9 +5,7 @@ tags:
   - productivity
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.imgur.com/s5YGDig.png
 ---
 
 *This is the first blog in a series on how I organize my work process, both physically and online. This includes my workspace, file management, and planning.*

@@ -5,11 +5,8 @@ tags:
   - self-hosted
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.ibb.co/V0Hk9hPh/image.png
 ---
-
 ## Video demo:
 
 {{< raw >}}

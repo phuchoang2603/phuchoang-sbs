@@ -5,9 +5,7 @@ tags:
   - hackathon
 description: 
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.imgur.com/E17gMsG.jpg
 ---
 *If you want to learn more about the technical details of how I built the app, please read the article here*
 

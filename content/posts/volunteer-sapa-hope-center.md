@@ -2,8 +2,8 @@
 title: Lesson Learned in Three-day Trip to Sapa Hope Center
 date: 2022-06-30
 tags:
-  - volunteer
-description: 
+  - entertainment
+description:
 draft: false
 featureimage: https://i.imgur.com/7iJYMw8.jpg
 ---

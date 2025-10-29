@@ -1,14 +1,17 @@
 ---
 title: Migrating and Rebuilding My RKE2 Kubernetes Cluster on Proxmox
-description: 
+description:
 date: 2025-05-21
-tags: 
+tags:
   - self-hosted
   - devops
   - kubernetes
+  - terraform
+  - ansible
 draft: false
 featureimage: https://live.staticflickr.com/65535/54541161701_cee5d47fa4_b.jpg
-series: ["Provision k8s on Proxmox"]
+series:
+  - Provision k8s on Proxmox
 series_order: 2
 ---
 Over the past few days, I tried deploying an RKE2 Kubernetes cluster on my home Proxmox setup. My initial setup worked, but it quickly became apparent that things weren’t stable or sustainable. RKE2’s auto-deployment behavior, the embedded etcd database, and service load balancing all caused performance and manageability issues. It wasn’t “buggy” in the literal sense, but definitely felt rigid and inefficient — not something I would consider a best-practice deployment for a long-term homelab setup.

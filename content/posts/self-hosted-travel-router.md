@@ -4,6 +4,8 @@ description:
 date: 2025-10-20
 tags:
   - self-hosted
+  - tailscale
+  - openwrt
 draft: false
 featureimage: https://i.ibb.co/hJ9xxbT7/image.png
 ---

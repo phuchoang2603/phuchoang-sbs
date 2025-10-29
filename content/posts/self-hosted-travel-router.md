@@ -5,9 +5,7 @@ date: 2025-10-20
 tags:
   - self-hosted
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.ibb.co/hJ9xxbT7/image.png
 ---
 
 A week ago, my laptop died. When I booted it up, it said something like, `fTPM is corrupted, press Y to reset or N to do nothing`. Neither of them helped me boot into my machine. So I had a severe mental attack back then, because that machine was the primary one that helped me do my work for school, my lab, and my personal projects. I was lucky to have my friend lend me an old laptop of his, but it was pretty bulky, so I figured I couldn't bring it to school. Therefore, I had to go to the school library to do my work on its public computers.

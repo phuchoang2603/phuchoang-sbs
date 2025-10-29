@@ -5,6 +5,7 @@ date: 2023-08-27
 tags:
   - self-hosted
 draft: false
+featureimage: https://i.ibb.co/Qs1ZKtv/image.png
 ---
 It all started with a computer my mom saved from the trash heap at her office. It was a standard HP Prodesk 600 G4—nothing special, and since I already had a PC and a laptop, I had no idea what to do with it. Just installing Windows on it felt like a waste. I knew it could be something more than just another desktop collecting dust.
 

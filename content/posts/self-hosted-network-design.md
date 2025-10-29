@@ -5,9 +5,7 @@ date: 2025-10-27
 tags:
   - self-hosted
 draft: false
-resources:
-  - name: featured-image
-    src: featured.jpg
+featureimage: https://i.ibb.co/8DM5Bswh/image.png
 ---
 A long time ago, my house only had 1 router, located on the third floor. So whenever we needed to access the internet while having dinner on the first floor, we needed to enable 4G or walk near the stairs just to receive a fraction of the WiFi signal. My father decided to give me an important task, which was to figure out how to solve this issue. I initially bought a simple WiFi extender located on the second floor, but after using it for a month, even though we could receive a strong signal from it, we couldn't access the internet because the signal from the router on the 3rd floor to the WiFi extender on the 2nd floor was still really weak.
 

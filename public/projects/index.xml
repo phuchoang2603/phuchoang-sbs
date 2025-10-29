@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Everyone, meet fel1x</title>
+    <title>Projects on everyone, meet fel1x</title>
     <link>http://localhost:1313/projects/</link>
-    <description>Recent content in Projects on Everyone, meet fel1x</description>
-    <generator>Hugo</generator>
+    <description>Recent content in Projects on everyone, meet fel1x</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
     <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster>
-    <copyright>2025 Felix</copyright>
-    <lastBuildDate>Wed, 09 Apr 2025 22:12:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 Felix Hoang</copyright>
+    <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Automate provisioning Kubernetes cluster on Proxmox with Terraform &#43; Ansible</title>
+      <link>http://localhost:1313/projects/kubernetes-proxmox/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/projects/kubernetes-proxmox/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>TechBurst – Revolutionary AI Solution for Identifying Counterfeit Products</title>
       <link>http://localhost:1313/projects/steam-hacks-2023-techburst-counterfeit/</link>
-      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate><author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
       <guid>http://localhost:1313/projects/steam-hacks-2023-techburst-counterfeit/</guid>
-      <description>&lt;p&gt;This is my product when participating in the STEAM Hacks 2023 competition. If you’re interested in delving deeper into the backstory and my journey throughout the competition, you can find the comprehensive details right here.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;https://phuchoang.sbs/hackathon/my-steam-hacks-2023-experience/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview-of-the-main-application&#34;&gt;Overview of the main application&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-current-features&#34;&gt;1. Current features:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; C2C marketplace&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Detection of fake and real products using the Teachable Machine scanner&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Barcode scanner &amp;amp; NLP Instruction&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-planned-features&#34;&gt;2. Planned features:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; View sellers’ and buyers’ locations via Google Maps&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bidding Algorithm&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Forecasting product demand and price changes (e.g. beecost…)&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Image tagging and recognition for product images&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Search for products using NLP queries and provide recommendations&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Assess product quality based on images, reviews, descriptions, etc.&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Allow users to train or utilize the categorization model.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/phuchoang2603/techburst-counterfeit&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;https://github.com/phuchoang2603/techburst-counterfeit&lt;/a&gt;&lt;/p&gt;</description>
+      <description></description>
+      
     </item>
+    
     <item>
       <title>Reware Website – Refurbished electronics E-commerce Platform</title>
       <link>http://localhost:1313/projects/steam-hacks-2023-reware-website/</link>
-      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate><author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
       <guid>http://localhost:1313/projects/steam-hacks-2023-reware-website/</guid>
-      <description>&lt;p&gt;Built during the first round of STEAM Hacks 2023, Reware is a C2C marketplace inspired by platforms like eBay and Shopee. It enables users to buy and sell refurbished electronics and features self-serve kiosks for convenient device trade-ins. Reware promotes sustainable tech use by giving old devices a second life while offering users cash incentives.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://i.imgur.com/NsJAegJ.jpeg&#34;&#xA;        data-srcset=&#34;https://i.imgur.com/NsJAegJ.jpeg, https://i.imgur.com/NsJAegJ.jpeg 1.5x, https://i.imgur.com/NsJAegJ.jpeg 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://i.imgur.com/NsJAegJ.jpeg&#34;&#xA;        title=&#34;https://i.imgur.com/NsJAegJ.jpeg&#34; /&gt;&lt;/p&gt;</description>
+      <description></description>
+      
     </item>
+    
     <item>
       <title>Reware App – Ewaste Management Solutions</title>
       <link>http://localhost:1313/projects/sft2022-reware-app/</link>
-      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate><author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
       <guid>http://localhost:1313/projects/sft2022-reware-app/</guid>
-      <description>&lt;p&gt;This is my product created while participating in Samsung Solve for Tomorrow 2022, a STEM contest organized by Samsung Electronic Company that encourages problem-solving skills and showcases the positive impact of young minds on society, with over 76,000 participants nationwide&lt;/p&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;data id=&#34;id-1&#34; data-raw&gt;&lt;/data&gt;&#xA;&lt;h2 id=&#34;user-experience-case-study&#34;&gt;User experience case study&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://i.imgur.com/KyH7Cui.jpeg&#34;&#xA;        data-srcset=&#34;https://i.imgur.com/KyH7Cui.jpeg, https://i.imgur.com/KyH7Cui.jpeg 1.5x, https://i.imgur.com/KyH7Cui.jpeg 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://i.imgur.com/KyH7Cui.jpeg&#34;&#xA;        title=&#34;https://i.imgur.com/KyH7Cui.jpeg&#34; /&gt;&lt;/p&gt;</description>
+      <description></description>
+      
     </item>
+    
     <item>
       <title>The Green Express – Initial Business Concept of Fostering Ewaste Reduction</title>
       <link>http://localhost:1313/projects/basf-green-express/</link>
-      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate><author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
       <guid>http://localhost:1313/projects/basf-green-express/</guid>
-      <description>&lt;p&gt;This product emerged from my participation in the BASF Innovation Challenge, a national competition that empowers students to devise sustainability solutions, where we secured the 3rd Runner Up prize. While our aim was not the highest award, this competition established a robust foundation for me and our team to persist in researching and developing solutions to address the serious issue of e-waste&lt;/p&gt;&#xA;&lt;h2 id=&#34;pitching&#34;&gt;Pitching&lt;/h2&gt;&#xA;&lt;data id=&#34;id-1&#34; data-raw&gt;&lt;/data&gt;&#xA;&lt;h2 id=&#34;applications-user-interface&#34;&gt;Applications User Interface&lt;/h2&gt;&#xA;&lt;data id=&#34;id-2&#34; data-raw&gt;&lt;/data&gt;</description>
+      <description></description>
+      
     </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on everyone, meet fel1x</title>
+    <link>http://localhost:1313/tags/devops/</link>
+    <description>Recent content in Devops on everyone, meet fel1x</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
+    <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster>
+    <copyright>© 2025 Felix Hoang</copyright>
+    <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Automate provisioning Kubernetes cluster on Proxmox with Terraform &#43; Ansible</title>
+      <link>http://localhost:1313/projects/kubernetes-proxmox/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/projects/kubernetes-proxmox/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Migrating and Rebuilding My RKE2 Kubernetes Cluster on Proxmox</title>
+      <link>http://localhost:1313/posts/terraform-ansible-proxmox-k8s-2/</link>
+      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/terraform-ansible-proxmox-k8s-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>How I Struggled (and Learned) to Deploy a Kubernetes Cluster on Proxmox with Terraform and Ansible</title>
+      <link>http://localhost:1313/posts/terraform-ansible-proxmox-k8s/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/terraform-ansible-proxmox-k8s/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

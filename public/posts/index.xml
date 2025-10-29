@@ -1,72 +1,135 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>All Posts - Everyone, meet fel1x</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>All Posts | Everyone, meet fel1x</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
-            <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster><copyright>2025 Felix</copyright><lastBuildDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Run Nintendo Switch Games on iPhone at 60FPS – Free, No Jailbreak Needed</title>
-    <link>http://localhost:1313/posts/emulation-switch-ipad/</link>
-    <pubDate>Thu, 03 Apr 2025 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/emulation-switch-ipad/</guid>
-    <description><![CDATA[<p>If you thought the biggest gaming news was the upcoming Switch 2, think again. The emulation community has made a breakthrough: you can now run Nintendo Switch games on your iPhone or iPad at buttery-smooth 60FPS—all offline, with no jailbreak, no shady VPNs, and zero sketchiness.</p>
-<data id="id-1" data-raw></data>
-<hr>
-<h2 id="background">Background</h2>
-<h3 id="what-is-jit-why-is-it-important-for-emulation">What is JIT? Why is it important for emulation?</h3>
-<p>Just-In-Time (JIT) compilation is a method used by emulators to dramatically improve performance by converting code into machine instructions while the program is running. Normally, an emulator has to interpret every single instruction one-by-one, which is slow. JIT speeds things up by compiling larger chunks of code in real time, allowing games to run closer to native speeds.
-However, Apple has strict security policies that prevent unauthorized JIT execution on iOS devices. There are some workarounds like JITStreamer or SideJITServer but they all require an internet connection. StikJIT and StosVPN now bypass this restriction by enabling JIT locally, without external servers, making offline Nintendo Switch emulation possible on iPhones.
-Here&rsquo;s the difference between no JIT vs JIT-enabled when running emulator on iOS.</p>]]></description>
-</item>
-<item>
-    <title>Automating Manga Translations: My Journey to a Seamless Reading Experience</title>
-    <link>http://localhost:1313/posts/self-hosted-manga-trans/</link>
-    <pubDate>Mon, 03 Mar 2025 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/self-hosted-manga-trans/</guid>
-    <description><![CDATA[<h2 id="video-demo">Video demo:</h2>
-<data id="id-1" data-raw></data>
-<hr>
-<h2 id="the-struggle-why-i-needed-this">The Struggle: Why I Needed This</h2>
-<p>Have you ever stumbled upon a manga so niche and obscure that it never gets an official English release? That was me—desperately trying to read intimate and underrated series that weren’t even on MangaDex, likely due to copyright issues.</p>
-<p>At first, I took the long road: hunting for raw Japanese scans, screenshotting pages, and running them through image translation tools. It worked&hellip; barely. The process was painfully slow and completely broke my immersion. Instead of enjoying the story, I spent more time waiting on awkward machine translations. It was, in a word, <strong>disruptive</strong>.</p>]]></description>
-</item>
-<item>
-    <title>Organizing My Digital Life - A Nerdy Journey Across Drives, File Management</title>
-    <link>http://localhost:1313/posts/productitvity-file-management/</link>
-    <pubDate>Thu, 16 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/productitvity-file-management/</guid>
-    <description><![CDATA[<p>We all love the idea of being super organized, right? We make these grand plans, give it our all for a few weeks or months, and then, bam! We&rsquo;re back to the good old &ldquo;throw it in the downloads folder with everything else&rdquo; routine. It happens to the best of us, and I&rsquo;m guilty too. But hey, even though I&rsquo;ve still got loads of room for improvement, I can proudly say I&rsquo;ve gotten way faster at finding my files.</p>]]></description>
-</item>
-<item>
-    <title>Organizing My Digital Life - How My Workspace Evolved from Chaos to Hackintosh</title>
-    <link>http://localhost:1313/posts/productivity-workspace/</link>
-    <pubDate>Sat, 04 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/productivity-workspace/</guid>
-    <description><![CDATA[<p><em>This is the first blog in a series on how I organize my work process, both physically and online. This includes my workspace, file management, and planning.</em></p>
-<p>Today, I would like to introduce you to the journey of optimizing my workspace environment, or in simpler terms, my desk setup. In fact, I am not someone who strictly adheres to principles in life. However, I really enjoy working in a disciplined environment and always strive to optimize it for effective studying and working. To achieve the setup I have today, I had to tear down and rebuild this workstation more than 10 times. Finally, I am truly satisfied with it. It not only satisfies me aesthetically but also makes me eager to work as soon as I step into this room (well, not quite true because nowadays most of the time I feel most productive when working from a coffee shop&hellip;).</p>]]></description>
-</item>
-<item>
-    <title>My STEAM Hacks 2023 experience</title>
-    <link>http://localhost:1313/posts/hackathon-steam-hacks-2023/</link>
-    <pubDate>Fri, 20 Oct 2023 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/hackathon-steam-hacks-2023/</guid>
-    <description><![CDATA[<p><em>If you want to learn more about the technical details of how I built the app, please read the article here</em></p>
-<p>Today, I want to share my experience with you about the project I worked on during the Steam Hacks 2023 competition. Although my team did not win any major awards for this project, it was an incredible learning opportunity for me, particularly in terms of coding. Moreover, I also gained valuable insights into the collaborative process through working with my amazing new friend from Son La - Minh Chau.</p>]]></description>
-</item>
-<item>
-    <title>Lesson Learned in Three-day Trip to Sapa Hope Center</title>
-    <link>http://localhost:1313/posts/volunteer-sapa-hope-center/</link>
-    <pubDate>Thu, 30 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Felix Hoang</author>
-    <guid>http://localhost:1313/posts/volunteer-sapa-hope-center/</guid>
-    <description><![CDATA[<p><em>This is my diary about the trip to Sapa Hope Center with 10 colleagues from Summit Education - a renowned English language teaching center in Hanoi. Therefore, this trip is aimed at fostering cultural exchange and teaching English and basic skills to students from Grade 1 to Grade 2 in Sapa, Lao Cai.</em></p>
-<h2 id="day-1">Day 1</h2>
-<p>After many days of anticipation for new tasks and challenges – my first time as a cameraman – on the charity trip to Sapa with Summit, today finally arrived. I woke up quite early, having only slept for 3 hours the night before. I should have slept more, but I woke up at 3:40 am. After brushing my teeth, I fumbled on my computer to download videos on photography tutorials from YouTube to watch and learn on the way (I was assigned to take photos even though I&rsquo;ve never held a camera before -))). I downloaded the videos and finished preparing my gear by 4:40 am, then called my dad to drive me.</p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on everyone, meet fel1x</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on everyone, meet fel1x</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>xuanphuc.a1gv@gmail.com (Felix Hoang)</managingEditor>
+    <webMaster>xuanphuc.a1gv@gmail.com (Felix Hoang)</webMaster>
+    <copyright>© 2025 Felix Hoang</copyright>
+    <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>On-Premise 101: Building a 3-Node Proxmox Cluster</title>
+      <link>http://localhost:1313/posts/on-premise-hardware/</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/on-premise-hardware/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Building a Secure Network for Homelab with OpenWRT, NextDNS, Tailscale, and a VPS</title>
+      <link>http://localhost:1313/posts/self-hosted-network-design/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/self-hosted-network-design/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Accessing a Homelab from a Locked-Down PC with a Travel Router</title>
+      <link>http://localhost:1313/posts/self-hosted-travel-router/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/self-hosted-travel-router/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Migrating and Rebuilding My RKE2 Kubernetes Cluster on Proxmox</title>
+      <link>http://localhost:1313/posts/terraform-ansible-proxmox-k8s-2/</link>
+      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/terraform-ansible-proxmox-k8s-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>How I Struggled (and Learned) to Deploy a Kubernetes Cluster on Proxmox with Terraform and Ansible</title>
+      <link>http://localhost:1313/posts/terraform-ansible-proxmox-k8s/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/terraform-ansible-proxmox-k8s/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Running Nintendo Switch Games on iPhone at 60FPS – Free, No Jailbreak Needed</title>
+      <link>http://localhost:1313/posts/emulation-switch-ipad/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/emulation-switch-ipad/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Automating Manga Translations: My Journey to a Seamless Reading Experience</title>
+      <link>http://localhost:1313/posts/self-hosted-manga-trans/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/self-hosted-manga-trans/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Organizing My Digital Life - A Nerdy Journey Across Drives, File Management</title>
+      <link>http://localhost:1313/posts/productitvity-file-management/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/productitvity-file-management/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Organizing My Digital Life - How My Workspace Evolved from Chaos to Hackintosh</title>
+      <link>http://localhost:1313/posts/productivity-workspace/</link>
+      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/productivity-workspace/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My STEAM Hacks 2023 experience</title>
+      <link>http://localhost:1313/posts/hackathon-steam-hacks-2023/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/hackathon-steam-hacks-2023/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My First Server Was Office Trash: A Self-Hosting Story</title>
+      <link>http://localhost:1313/posts/self-hosted-initial-story/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/self-hosted-initial-story/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lesson Learned in Three-day Trip to Sapa Hope Center</title>
+      <link>http://localhost:1313/posts/volunteer-sapa-hope-center/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      <author>xuanphuc.a1gv@gmail.com (Felix Hoang)</author>
+      <guid>http://localhost:1313/posts/volunteer-sapa-hope-center/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
 </rss>

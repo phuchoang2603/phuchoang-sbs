@@ -122,4 +122,3 @@ Now that the physical foundation is laid, it's time to build on top of it. In th
 3. Automating Everything with GitOps: Finally, I'll show you how I use **ArgoCD** to automatically deploy and manage all my applications (Jellyfin, Frigate, and more) on Kubernetes.
 
 Stay tuned!
-

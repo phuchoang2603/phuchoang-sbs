@@ -1,0 +1,35 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "projects"
+pageRef = "projects"
+identifier = "Ez6VcXNbBT"
+weight = 3
+
+[[main]]
+name = "posts"
+pageRef = "posts"
+identifier = "hJO3Y1U6p5"
+weight = 1
+
+[[main]]
+name = "about"
+pageRef = "about"
+identifier = "uFD0NTcpGb"
+weight = 5
+
+[[main]]
+name = "tags"
+pageRef = "tags"
+identifier = "7nu1rXdm40"
+weight = 4
+
+[[main]]
+name = "series"
+pageRef = "series"
+identifier = "AlUkTYii75"
+weight = 2
+
+[[footer]]
+none = "none"

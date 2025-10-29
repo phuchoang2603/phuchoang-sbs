@@ -17,7 +17,6 @@ headline = "cs student @ USF"
 email = "xuanphuc.a1gv@gmail.com"
 image = "logos/web-app-manifest-512x512.png"
 links = [
-  { email = "mailto:xuanphuc.a1gv@gmail.com" },
   { github = "https://github.com/phuchoang2603" },
   { linkedin = "https://linkedin.com/in/phuchoang2603" },
 ]

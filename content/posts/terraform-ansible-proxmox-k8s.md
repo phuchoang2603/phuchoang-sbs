@@ -1,14 +1,17 @@
 ---
 title: How I Struggled (and Learned) to Deploy a Kubernetes Cluster on Proxmox with Terraform and Ansible
-description: 
+description:
 date: 2025-05-15
 tags:
   - self-hosted
   - devops
   - kubernetes
+  - terraform
+  - ansible
 draft: false
 featureimage: https://i.ibb.co/W418Zp9X/image.png
-series: ["Provision k8s on Proxmox"]
+series:
+  - Provision k8s on Proxmox
 series_order: 1
 ---
 Hi everyone! Have you ever tried using AWS, GCP, or Azure? It’s an amazing experience, right? The ability to spin up a couple of VMs, a Kubernetes (K8s) cluster, set up load balancers, high availability — all in just a few clicks. You can focus entirely on developing your product. I mean, yeah, why bother with the hassle of learning how all of that works under the hood?

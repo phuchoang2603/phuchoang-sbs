@@ -2,7 +2,8 @@
 title: Running Nintendo Switch Games on iPhone at 60FPS – Free, No Jailbreak Needed
 date: 2025-04-03
 tags:
-  - emulation
+  - gaming
+  - entertainment
 description:
 draft: false
 featureimage: https://i.ibb.co/XkWCDD8J/switch-ios.webp

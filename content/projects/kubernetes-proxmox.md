@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - proxmox
 draft: false
+layout: "zen"
 featureimage: https://i.ibb.co/W418Zp9X/image.png
 ---
 

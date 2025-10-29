@@ -34,14 +34,15 @@ showAppearanceSwitcher = true
 showScrollToTop = true
 
 [homepage]
-layout = "profile"
+layout = "background"
+homepageImage = "img/fireflies.svg"
 showRecent = true
-showRecentItems = 5
+showRecentItems = 6
 showMoreLink = true
 showMoreLinkDest = "/posts/"
 cardView = true
 cardViewScreenWidth = false
-layoutBackgroundBlur = false
+layoutBackgroundBlur = true
 disableHeroImageFilter = false
 
 [article]
@@ -51,7 +52,8 @@ showLikes = false
 showDateOnlyInArticle = false
 showDateUpdated = false
 showAuthor = false
-showHero = false
+showHero = true
+heroStyle = "background"
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
@@ -76,14 +78,14 @@ showHero = false
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
-showSummary = false
+showSummary = true
 showViews = false
 showLikes = false
 showTableOfContents = false
 showCards = true
 orderByWeight = false
 groupByYear = true
-cardView = true
+cardView = false
 cardViewScreenWidth = false
 constrainItemsWidth = false
 

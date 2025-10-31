@@ -16,6 +16,8 @@ But deploying on-premise isn't that easy, though. You have to spend time, effort
 
 So if you want to start exploring and build an infrastructure like the one I'm currently hosting, here's the guide for you to do so. This is the first part of the series **`On-Premise 101`**. In this part, I'll share my whole journey from the beginning: how I acquired the hardware, the decisions I made, and finally, how I wired it all together with networking to get it ready for the software.
 
+*In this part, you'll see me refer to `Proxmox` a lot and might ask, "What the hell is it?" For now, just think of it as the platform that allows me to create virtual machines. I will cover it in-depth in the next part.*
+
 ## The Beginning: My First SFF Server and Its Limits
 Looking back, I started this journey 3 years ago. At the time, I had an `HP Prodesk 600 G4 SFF` that my mother gave me; she picked it up from the warehouse at her office. It was an old computer, so I didn't know what to do with it at the time, since I already had a PC that I could do anything with. But when I was browsing my YouTube feed, I saw a video talking about how a creator used his Synology NAS (Network Attached Storage) to replace Google Drive and help him collaborate with his video editors easily.
 

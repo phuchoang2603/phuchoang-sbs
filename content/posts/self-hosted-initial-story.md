@@ -4,6 +4,8 @@ description:
 date: 2023-08-27
 tags:
   - self-hosted
+  - proxmox
+  - python
 draft: false
 featureimage: https://i.redd.it/47eryezt0xg91.png
 ---

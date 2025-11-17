@@ -25,7 +25,9 @@ However, after a couple of days of wrestling with HashiCorp Vault, I'm ready to 
 
 _In case anyone haven't read it, here's my [blog post](https://phuchoang.sbs/posts/on-premise-provison-ansible/) on the previous version of the project_
 
-## The "Why": From Fragile Keys to Zero Trust
+{{< github repo="phuchoang2603/kubernetes-proxmox" showThumbnail=true >}}
+
+## From Fragile Keys to Zero Trust
 
 In my previous setup, I manually managed secrets. SSH keys were on my local machine, and other credentials were scattered in config files, all carefully managed with `.gitignore`. This seemed fine... **until my admin laptop died a few weeks ago.**
 
@@ -87,7 +89,7 @@ There are a few other pieces worth calling out:
 
 With that background, let's dive into how to implement this.
 
-## Setting up HashiCorp Vault
+## 1. Setting up HashiCorp Vault
 
 Since my `terraform-admin` project needs secrets (like Minio credentials) _just to initialize its remote state_, the Vault server has to exist _before_ the admin automation can run.
 
@@ -184,7 +186,7 @@ This "environment-first" design has two huge benefits:
 
 I populate these _initial, critical_ secrets manually via the Vault UI. From that point on, I can use the Vault CLI to log in, fetch those Minio credentials, and let `terraform-admin` automate everything else.
 
-## Configuring Vault with `terraform-admin`
+## 2. Configuring Vault with `terraform-admin`
 
 This is where `terraform-admin` earns its keep. It bootstraps the critical Vault components that GitHub Actions will rely on. The goal is a true Zero-Trust workflow:
 
@@ -192,7 +194,7 @@ This is where `terraform-admin` earns its keep. It bootstraps the critical Vault
 - **They get only the secrets they need** via environment-specific policies.
 - **They get ephemeral SSH access** by requesting temporary certificates from Vault's CA.
 
-### Creating Policies and JWT/OIDC Auth for GitHub Actions
+### 2.1 Creating Policies and JWT/OIDC Auth for GitHub Actions
 
 #### What I Want to Achieve
 
@@ -371,7 +373,7 @@ This policy does two things:
 1. Creates `dev-policy` or `prod-policy` that only allows reading from its _own_ `kv` path (e.g., `kv/dev/data/*`). This enforces true isolation.
 2. It grants permission for the runner to request an SSH certificate from the SSH engine. Let's talk about that next.
 
-### SSH Certificate Authority for Ephemeral Access
+### 2.2 SSH Certificate Authority for Ephemeral Access
 
 #### Why This Exists
 
@@ -467,7 +469,7 @@ This is where all the pieces click together. Remember that environment-specific 
 
 Without that permission, the runner's JWT-authed token would be _valid_ but _powerless_ to request a certificate. This is the perfect example of how the **JWT auth role** (who the runner _is_), the **policy** (what the runner can _do_), and the **SSH engine** (the _action_ itself) work together to provide short-lived, auditable, and secure access.
 
-### Running `terraform-admin`
+### 2.3 Running `terraform-admin`
 
 To run this, we need a `provider.tf` for the `terraform-admin` project itself.
 
@@ -523,7 +525,7 @@ terraform apply
 
 After applying, your Vault is fully configured. The JWT auth backend is enabled, policies are created, and the SSH CAs are generated and have their public keys ready for `terraform-provision` to consume.
 
-## The GitHub Actions CI/CD Pipeline
+## 3. The GitHub Actions CI/CD Pipeline
 
 With Vault configured and the auth roles in place, it's time to wire up the CI/CD pipeline. The workflows in `.github/workflows` will authenticate to Vault, fetch secrets, and then provision and configure the infrastructure.
 
@@ -534,7 +536,7 @@ I have two main workflows:
 
 But first, there's a problem to solve. GitHub-hosted runners are ephemeral and live on GitHub's network. They can't reach the private IPs (`10.69.x.x`) in my homelab. As mentioned earlier, I use **Tailscale** to solve this.
 
-### Setting Up Tailscale for Secure Network Access
+### 3.1 Setting Up Tailscale for Secure Network Access
 
 _If you want to read more about my homelab network setup, you can read it [here](https://phuchoang.sbs/posts/self-hosted-network-design/)_
 
@@ -574,7 +576,7 @@ What this step will do:
 
 ![](https://i.ibb.co/WpzYdtsh/image.png)
 
-### Setting Up Linting for Code Quality
+### 3.2 Setting Up Linting for Code Quality
 
 Migrating to GitHub Actions also unlocked an easy win: automated linting. Linting is cheap, pays off immediately, and gives fast feedback on every pull request by catching syntax and formatting errors _before_ they get merged.
 
@@ -653,7 +655,7 @@ The result is an immediate status check on your PR. You can't merge until lintin
 
 ![](https://i.ibb.co/pj9RCP6Y/image.png)
 
-### Setting Up the Terraform Workflow
+### 3.3 Setting Up the Terraform Workflow
 
 Now for the main event: the workflow that provisions VMs on Proxmox. This pipeline `plans` on pull requests and `applies` on pushes to the `master` branch. All secrets are fetched dynamically from Vault.
 
@@ -810,7 +812,7 @@ More on how to config this plugin:
 
 ![](https://i.ibb.co/zTKswHZT/image.png)
 
-### Setting Up the Ansible Workflow
+### 3.4 Setting Up the Ansible Workflow
 
 Now that the `terraform-plan-apply` job has provisioned the VMs, this job bootstraps the Kubernetes cluster on them.
 

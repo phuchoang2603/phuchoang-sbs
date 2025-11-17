@@ -3,9 +3,13 @@ title: Organizing My Digital Life - How My Workspace Evolved from Chaos to Hacki
 date: 2023-11-04
 tags:
   - productivity
-description: 
+description:
 draft: false
 featureimage: https://i.imgur.com/s5YGDig.png
+summary:
+series:
+  - Organizing My Digital Life
+series_order: 1
 ---
 Today, I would like to introduce you to the journey of optimizing my workspace environment, or in simpler terms, my desk setup. In fact, I am not someone who strictly adheres to principles in life. However, I really enjoy working in a disciplined environment and always strive to optimize it for effective studying and working. To achieve the setup I have today, I had to tear down and rebuild this workstation more than 10 times. Finally, I am truly satisfied with it. It not only satisfies me aesthetically but also makes me eager to work as soon as I step into this room (well, not quite true because nowadays most of the time I feel most productive when working from a coffee shop...).
 ## Initial set-up from 2021, when I was just a 9th-grade middle schooler

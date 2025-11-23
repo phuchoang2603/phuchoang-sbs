@@ -143,15 +143,16 @@ I also run a cleanup script to clear old SSH keys, which prevents "host key" err
     
 - **Deploy kube-vip** for a high-availability VIP for the `servers` and to provide LoadBalancer IPs for `Services`.
     
-- **Deploy cert-manager & traefik** for SSL certificates and an ingress controller.
-    
-- **Deploy longhorn** for high-availability persistent storage.
-    
-- **Deploy argo-cd** for GitOps deployment of all our applications (covered in the next part).
+- **Deploy Helm applications** dynamically from a centralized configuration (`helm.yaml`), including:
+	- **cert-manager** for SSL certificate management
+	- **traefik** as our ingress controller
+	- **longhorn** for high-availability persistent storage
+	- **argo-cd** for GitOps deployment of all our applications (covered in the next part)
+	- Additional apps like **cloudnative-pg**, **external-secrets**, and more
     
 - **Fetch** the `kubectl` config from the server to our local machine.
 
- Here's the overview of my Ansible structure based on that workflow. `ansible.cfg` sets default CLI arguments. `collections/requirements.yaml` lists required Ansible plugins. The `inventory` directory stores our variables (like the VM IPs). `site.yaml` is the main playbook that calls the modular playbooks (Roles) located in the `roles` directory.
+ Here's the overview of my Ansible structure based on that workflow. `ansible.cfg` sets default CLI arguments. `collections/requirements.yaml` lists required Ansible plugins. The `inventory` directory stores our variables (like the VM IPs and Helm app configurations). `site.yaml` is the main playbook that calls the modular playbooks (Roles) located in the `roles` directory.
 
 ```shell
 .
@@ -160,15 +161,16 @@ I also run a cleanup script to clear old SSH keys, which prevents "host key" err
 │   └── requirements.yaml
 ├── inventory
 │   ├── group_vars
+│   │   └── all
+│   │       ├── helm.yaml      # Centralized Helm apps config
+│   │       └── main.yaml      # Cluster variables
 │   └── hosts.ini
 ├── roles
-│   ├── add-agent
-│   ├── add-server
-│   ├── apply-argocd
-│   ├── apply-kube-vip
-│   ├── apply-longhorn
-│   ├── apply-ssl
-│   └── download-rke2
+│   ├── add_agent
+│   ├── add_server
+│   ├── apply_kube_vip
+│   ├── deploy_helm_apps       # Dynamic Helm deployment
+│   └── download_rke2
 └── site.yaml
 ```
 
@@ -222,79 +224,128 @@ As introduced earlier, `site.yaml` is the master playbook that calls the child r
   hosts: rke2 # servers + agents + longhorn nodes combined
   gather_facts: true
   roles:
-    - download-rke2
+    - download_rke2
 
 # Bootstrap k8s
 - name: Bootstrap RKE2 Servers
   hosts: servers
   gather_facts: true
   roles:
-    - add-server
+    - add_server
 
 - name: Add additional RKE2 agents & longhorn agents
   hosts: agents, longhorn
   gather_facts: true
   roles:
-    - add-agent
+    - add_agent
 
 # Deploy applications
-- name: Deploy Kube VIP
+- name: Deploy applications
   hosts: servers
   gather_facts: true
   run_once: true
   roles:
-    - role: apply-kube-vip
-      tags: [kube_vip]
-
-- name: Deploy Cert-Manager & Traefik
-  hosts: servers
-  gather_facts: true
-  run_once: true
-  roles:
-    - role: apply-ssl
-      tags: [ssl]
-
-- name: Deploy Optional services
-  hosts: servers
-  gather_facts: true
-  run_once: true
-  roles:
-    - role: apply-longhorn
-      tags: [longhorn]
-    - role: apply-argocd
-      tags: [argocd]
-
-- name: Fetch kubeconfig from the first server
-  hosts: servers
-  tasks:
-    - name: Fetch kubeconfig
-      ansible.builtin.fetch:
-        src: "/home/{{ ansible_user }}/.kube/config"
-        dest: "/tmp/{{ env }}.yaml"
-        flat: true
-      when: inventory_hostname == groups['servers'][0]
-
-- name: Configure kubectl on localhost
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Ensure .kube directory exists on localhost
-      ansible.builtin.file:
-        path: "{{ lookup('env', 'HOME') }}/.kube"
-        state: directory
-        mode: "0755"
-
-    - name: Move fetched kubeconfig to ~/.kube/{{env}}.yml
-      ansible.builtin.command:
-        cmd: "mv /tmp/{{ env }}.yaml {{ lookup('env', 'HOME') }}/.kube/{{env}}.yml"
-      changed_when: true
-
-    - name: Rename context from 'default' to a unique name
-      ansible.builtin.replace:
-        path: "{{ lookup('env', 'HOME') }}/.kube/{{env}}.yml"
-        regexp: "default"
-        replace: "{{env}}"
+    - role: apply_kube_vip
+    - role: deploy_helm_apps  # Deploys all Helm apps from helm.yaml
 ```
+
+Notice how much simpler this is compared to having separate roles for each application. Instead of calling `apply-ssl`, `apply-longhorn`, and `apply-argocd` individually, we now have a single `deploy_helm_apps` role that reads all application definitions from `inventory/group_vars/all/helm.yaml` and deploys them dynamically. This makes adding or removing applications as simple as editing a YAML configuration file.
+
+## Data-Driven Deployment: The helm.yaml Configuration
+
+This is where things get interesting. Instead of creating a separate role for each application (which led to a lot of code duplication), I've centralized all Helm application configurations into a single file: `inventory/group_vars/all/helm.yaml`. This file defines a `helm_applications` list, and each item describes one application to deploy.
+
+Here's what a typical application definition looks like:
+
+```yaml
+helm_applications:
+  # cert-manager: Certificate management for Kubernetes
+  - name: cert-manager
+    chart: cert-manager
+    version: v1.17.2
+    repo: https://charts.jetstack.io
+    namespace: cert-manager
+    create_namespace: true
+    set_values:
+      crds.enabled: "true"
+      extraArgs[0]: "--dns01-recursive-nameservers-only"
+      extraArgs[1]: "--dns01-recursive-nameservers=1.1.1.1:53"
+    additional_manifests:
+      - cert-manager-issuer
+
+  # traefik: Ingress controller and load balancer
+  - name: traefik
+    chart: traefik
+    repo: https://traefik.github.io/charts
+    namespace: traefik
+    create_namespace: true
+    values_content: |
+      service:
+        type: LoadBalancer
+        spec:
+          loadBalancerIP: {{ vip_ingress_ip }}
+      tlsStore:
+        default:
+          defaultCertificate:
+            secretName: wildcard-tls
+    additional_manifests:
+      - traefik-wildcard-cert
+
+  # longhorn: Distributed block storage
+  - name: longhorn
+    chart: longhorn
+    version: v1.8.1
+    repo: https://charts.longhorn.io
+    namespace: longhorn-system
+    create_namespace: true
+    ingress:
+      enabled: true
+      host: "longhorn.{{ ssl_local_domain }}"
+      service_name: longhorn-frontend
+      service_port: 80
+    additional_manifests:
+      - longhorn-iscsi
+      - longhorn-nfs
+```
+
+Each application entry supports:
+- **Basic Helm config**: `name`, `chart`, `version`, `repo`, `namespace`
+- **Helm values**: via `set_values` (for simple key-value pairs) or `values_content` (for complex YAML blocks)
+- **Ingress routing**: If `ingress.enabled` is true, an `IngressRoute` is automatically created
+- **Additional manifests**: Custom resources like the ClusterIssuer for cert-manager or dependency jobs for Longhorn
+
+The beauty of this approach is that the `deploy_helm_apps` role simply loops through this list and applies templates. Here's the simplified logic from `roles/deploy_helm_apps/tasks/main.yaml`:
+
+```yaml
+- name: Deploy helm charts
+  ansible.builtin.template:
+    src: templates/helm-chart.yaml.j2
+    dest: "/var/lib/rancher/rke2/server/manifests/{{ item.name }}-helm-chart.yaml"
+  loop: "{{ helm_applications }}"
+
+- name: Deploy ingress routes for apps with ingress enabled
+  ansible.builtin.template:
+    src: templates/ingress-route.yaml.j2
+    dest: "/var/lib/rancher/rke2/server/manifests/{{ item.name }}-ingress-route.yaml"
+  loop: "{{ helm_applications }}"
+  when:
+    - item.ingress is defined
+    - item.ingress.enabled | default(false)
+
+- name: Deploy additional manifests
+  ansible.builtin.template:
+    src: "templates/additional/{{ manifest }}.yaml.j2"
+    dest: "/var/lib/rancher/rke2/server/manifests/{{ manifest }}.yaml"
+  loop: "{{ all_additional_manifests }}"
+```
+
+This data-driven approach means:
+1. **No code duplication**: One set of templates handles all applications
+2. **Easy to maintain**: Adding a new app is just adding a YAML block
+3. **Consistent structure**: Every app follows the same deployment pattern
+4. **Clear overview**: All deployed apps are visible in one config file
+
+Now let's dive into how specific applications are deployed with this system.
 
 ## The Playbook in Action: A Step-by-Step Breakdown
 
@@ -386,6 +437,10 @@ This playbook performs the following tasks:
 Remember when I mentioned the `Helm Controller` that RKE2 integrated? This makes deploying manifests easy. Any file found in `/var/lib/rancher/rke2/server/manifests` will automatically be deployed, similar to `kubectl apply`. However, this method isn't always reliable, as it's hard to debug and track what went wrong (as you'll see in the next section). Therefore, I've chosen **ArgoCD** to deploy all my applications later.
 
 ### 5. Ingress and SSL with Traefik & Cert-Manager
+
+![](https://i.ibb.co/XfbwzyK7/image.png)
+*Image from https://msazure.club/using-traefik-ingress-with-cert-manager-and-aad-authentication/*
+
 I didn't want to access services via `NodePort` and port-forwarding. I figured I'd configure `LoadBalancer` services, since I already have `kube-vip`. However, I also don't like remembering IPs for each service, so I thought I'd use an Ingress Controller. 
 
 > I need to be honest: this part was a nightmare, and I want to share the solutions so you don't waste a day like I did.
@@ -400,12 +455,27 @@ I didn't want to access services via `NodePort` and port-forwarding. I figured I
 >     
 > - **The Fix:** I had to go all the way back to **Terraform** and specify an external DNS server (like `1.1.1.1`) in my `cloud-init` config. I'm still not 100% sure why this was the only fix, but it worked.
 
-Eventually, I circled back to **Traefik**—mainly because I’m planning to integrate Authentik for authentication, and Traefik's middlewares make that much easier. This role performs the following tasks:
-- **Deploy Cert-Manager**: Deploys the Cert-Manager Helm chart to automate TLS certificates.
-- **Deploy ClusterIssuer**: Deploys a `ClusterIssuer` custom resource. This configures Cert-Manager with my Cloudflare API token and email to issue certificates.
-- **Deploy Traefik**: Deploys the Helm chart for Traefik, our ingress controller.figured with your specified values.
+Eventually, I circled back to **Traefik** - mainly because I'm planning to integrate Authentik for authentication, and Traefik's middlewares make that much easier.
 
-The most important part here is the `ClusterIssuer`, which authenticates with Cloudflare using the variables from our `all.yaml` file.
+With the new `deploy_helm_apps` approach, both Cert-Manager and Traefik are defined in `helm.yaml`. Here's how they're configured:
+
+**Cert-Manager configuration:**
+```yaml
+- name: cert-manager
+  chart: cert-manager
+  version: v1.17.2
+  repo: https://charts.jetstack.io
+  namespace: cert-manager
+  create_namespace: true
+  set_values:
+    crds.enabled: "true"
+    extraArgs[0]: "--dns01-recursive-nameservers-only"
+    extraArgs[1]: "--dns01-recursive-nameservers=1.1.1.1:53"
+  additional_manifests:
+    - cert-manager-issuer  # Deploys the ClusterIssuer
+```
+
+Notice the `extraArgs` for DNS configuration - this is the fix for Problem 3 above. The `additional_manifests` field tells the role to also deploy the `ClusterIssuer`, which authenticates with Cloudflare:
 
 ```yaml
 ---
@@ -436,7 +506,41 @@ spec:
             key: api-token
 ```
 
-After that, you need to configure Traefik to _use_ this issuer to generate wildcard certificates. This means any service I create at `*.dev.phuchoang.sbs` will get SSL automatically.
+After that, you need to configure Traefik to _use_ this issuer to generate wildcard certificates. This means any service I create at `*.dev.phuchoang.sbs` will get SSL automatically. Here's the Traefik configuration from `helm.yaml`:
+
+**Traefik configuration:**
+```yaml
+- name: traefik
+  chart: traefik
+  repo: https://traefik.github.io/charts
+  namespace: traefik
+  create_namespace: true
+  values_content: |
+    service:
+      type: LoadBalancer
+      spec:
+        loadBalancerIP: {{ vip_ingress_ip }}
+    tlsStore:
+      default:
+        defaultCertificate:
+          secretName: wildcard-tls
+    ingressRoute:
+      dashboard:
+        enabled: true
+        matchRule: Host(`traefik.{{ ssl_local_domain }}`)
+        entryPoints: ["websecure"]
+    ports:
+      web:
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
+  additional_manifests:
+    - traefik-wildcard-cert  # Deploys the Certificate resource
+```
+
+The `traefik-wildcard-cert` manifest creates a Certificate that requests a wildcard cert from our ClusterIssuer:
 
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -461,118 +565,108 @@ spec:
 ### 6. Deploying Core Services (Longhorn & ArgoCD)
 
 #### Longhorn: For Persistent, Replicated Storage
-- **Longhorn** is a lightweight, distributed block storage system for Kubernetes. It provides persistent storage for stateful applications, replicates that storage for high availability, and can back up volumes to our TrueNAS NFS server.
-- We install Longhorn on the nodes we tagged with the `node.longhorn.io/create-default-disk=true` label back in the `add-agent` role.
-- However, Longhorn has several prerequisites, including `open-iscsi` and an `nfsv4` client. When I used the Longhorn CLI tool to check my nodes, I found I was missing them. Luckily, Longhorn offers manifest jobs to install these dependencies, so I deploy those first, then the Longhorn Helm chart, and finally an `IngressRoute` to expose its UI.
-	
+![](https://longhorn.io/img/diagrams/architecture/how-longhorn-works-with-kubernetes.svg)
+*Image from official docs https://longhorn.io/docs/1.10.1/concepts/*
+
+**Longhorn** is a lightweight, distributed block storage system for Kubernetes. It provides persistent storage for stateful applications, replicates that storage for high availability, and can back up volumes to our TrueNAS NFS server.
+
+We install Longhorn on the nodes we tagged with the `node.longhorn.io/create-default-disk=true` label back in the `add-agent` role. However, Longhorn has several prerequisites, including `open-iscsi` and an `nfsv4` client. When I used the Longhorn CLI tool to check my nodes, I found I was missing them. 
+
+Luckily, Longhorn offers manifest jobs to install these dependencies. With the new `helm.yaml` approach, we simply reference these in the `additional_manifests` field:
+
+**Longhorn configuration:**
 ```yaml
-- name: Deploy longhorn iscsi
-  ansible.builtin.template:
-    src: templates/longhorn-iscsi.j2
-    dest: /var/lib/rancher/rke2/server/manifests/longhorn-iscsi.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-
-- name: Deploy longhorn nfs
-  ansible.builtin.template:
-    src: templates/longhorn-nfs.j2
-    dest: /var/lib/rancher/rke2/server/manifests/longhorn-nfs.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-
-- name: Deploy longhorn-helm-chart manifest
-  ansible.builtin.template:
-    src: templates/longhorn-helm-chart.j2
-    dest: /var/lib/rancher/rke2/server/manifests/longhorn-helm-chart.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-
-- name: Deploy longhorn-ingress-route.j2
-  ansible.builtin.template:
-    src: templates/longhorn-ingress-route.j2
-    dest: /var/lib/rancher/rke2/server/manifests/longhorn-ingress-route.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-  tags:
-    - ssl
+- name: longhorn
+  chart: longhorn
+  version: v1.8.1
+  repo: https://charts.longhorn.io
+  namespace: longhorn-system
+  create_namespace: true
+  set_values:
+    defaultSettings.createDefaultDiskLabeledNodes: "true"
+    persistence.reclaimPolicy: "Retain"
+  ingress:
+    enabled: true
+    host: "longhorn.{{ ssl_local_domain }}"
+    service_name: longhorn-frontend
+    service_port: 80
+  additional_manifests:
+    - longhorn-iscsi  # Installs iSCSI dependencies
+    - longhorn-nfs    # Installs NFS client dependencies
 ```
+
+Notice three things here:
+1. The `additional_manifests` field automatically deploys the prerequisite jobs
+2. The `ingress.enabled` flag tells `deploy_helm_apps` to create an IngressRoute
+3. The `set_values` configures Longhorn to use our labeled nodes
+
+All of this happens automatically - the role loops through the configuration, deploys the manifests, creates the Helm chart, and sets up the ingress.
 
 #### ArgoCD: Our GitOps Engine
-- ArgoCD will play a prominent role in the cluster, as it will be responsible for deploying _all_ of our applications in the next part of the series.
+![](https://i.ibb.co/s9Nkq0yC/image.png)
+*Image from official docs https://www.cncf.io/blog/2020/12/17/solving-configuration-drift-using-gitops-with-argo-cd/*
 
+ArgoCD will play a prominent role in the cluster, as it will be responsible for deploying _all_ of our applications in the next part of the series. With the centralized configuration, deploying ArgoCD is just another entry in `helm.yaml`:
+
+**ArgoCD configuration:**
 ```yaml
-- name: Deploy argocd-helm-chart.j2
-  ansible.builtin.template:
-    src: templates/argocd-helm-chart.j2
-    dest: /var/lib/rancher/rke2/server/manifests/argocd-helm-chart.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-
-- name: Deploy argocd-ingress-route.j2
-  ansible.builtin.template:
-    src: templates/argocd-ingress-route.j2
-    dest: /var/lib/rancher/rke2/server/manifests/argocd-ingress-route.yaml
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: "0644"
-  when: inventory_hostname == groups['servers'][0]
-  tags:
-    - ssl
+- name: argo-cd
+  chart: argo-cd
+  version: v8.0.9
+  repo: https://argoproj.github.io/argo-helm
+  namespace: argo-cd
+  create_namespace: true
+  values_content: |
+    configs:
+      params:
+        server.insecure: true  # We handle TLS at Traefik
+  ingress:
+    enabled: true
+    host: "argo.{{ ssl_local_domain }}"
+    service_name: argo-cd-argocd-server
+    service_port: 80
 ```
+
+The `server.insecure: true` setting is intentional - we're terminating TLS at Traefik (our ingress controller), not at ArgoCD itself. This is a common pattern in Kubernetes where the ingress handles all TLS, and internal traffic is plain HTTP.
+
+**The power of this approach:** If I want to add another application tomorrow (say, Prometheus or Grafana), I just add another block to `helm.yaml`. No new role, no new template files scattered around - just one YAML entry, and `deploy_helm_apps` handles the rest.
 
 ## The Final Handoff: Getting kubectl Access
 
-After all those tasks, we finally have a fully-fledged, working Kubernetes cluster. The last step is to get the cluster's configuration file onto our local machine so we can control it.
+After all those tasks, we finally have a fully-fledged, working Kubernetes cluster. The last step is to get cluster access so we can control it with `kubectl`.
 
-```yaml
-
-- name: Fetch kubeconfig from the first server
-  hosts: servers
-  tasks:
-    - name: Fetch kubeconfig
-      ansible.builtin.fetch:
-        src: "/home/{{ ansible_user }}/.kube/config"
-        dest: "/tmp/{{ env }}.yaml"
-        flat: true
-      when: inventory_hostname == groups['servers'][0]
-
-- name: Configure kubectl on localhost
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Ensure .kube directory exists on localhost
-      ansible.builtin.file:
-        path: "{{ lookup('env', 'HOME') }}/.kube"
-        state: directory
-        mode: "0755"
-
-    - name: Move fetched kubeconfig to ~/.kube/{{env}}.yml
-      ansible.builtin.command:
-        cmd: "mv /tmp/{{ env }}.yaml {{ lookup('env', 'HOME') }}/.kube/{{env}}.yml"
-      changed_when: true
-
-    - name: Rename context from 'default' to a unique name
-      ansible.builtin.replace:
-        path: "{{ lookup('env', 'HOME') }}/.kube/{{env}}.yml"
-        regexp: "default"
-        replace: "{{env}}"
-```
+> **Note:** This section will be updated in a future post to cover **OIDC authentication with HashiCorp Vault**. Instead of fetching and storing kubeconfig files directly, we'll integrate the cluster with Vault for centralized identity management and short-lived credentials. This provides better security through:
+> - Zero-trust authentication via OIDC
+> - Role-based access control (RBAC) tied to Vault policies
+> - No long-lived credentials stored locally
+> 
+> For now, you can fetch the kubeconfig from the first server node to get cluster access, but we'll replace this with the Vault OIDC flow in the upcoming GitOps series.
 
 ## Verification
-You might want to set this environment variable in your `.bashrc` or shell config so `kubectl` auto-detects all your config files. This is my nushell config, for example:
 
-```yaml
-$env.KUBECONFIG = (glob '~/.kube/*.yml' | str join ':')
+Once you have cluster access configured, you can verify the deployment. Here's an example of checking the nodes:
+
+```shell
+dev (default) in kubernetes-proxmox on  master [!] is 📦 v0.1.0 via 🐍 v3.13.7
+❯ k get nodes
+NAME            STATUS   ROLES                       AGE    VERSION
+dev-longhorn1   Ready    <none>                      2d3h   v1.32.3+rke2r1
+dev-longhorn2   Ready    <none>                      2d3h   v1.32.3+rke2r1
+dev-longhorn3   Ready    <none>                      2d3h   v1.32.3+rke2r1
+dev-server1     Ready    control-plane,etcd,master   2d3h   v1.32.3+rke2r1
+dev-server2     Ready    control-plane,etcd,master   2d3h   v1.32.3+rke2r1
+dev-server3     Ready    control-plane,etcd,master   2d3h   v1.32.3+rke2r1
+```
+
+You can also verify that all the Helm applications deployed successfully:
+
+```shell
+❯ kubectl get helmcharts -A
+NAMESPACE     NAME              CHART          REPO                                      VERSION    STATUS
+cert-manager  cert-manager      cert-manager   https://charts.jetstack.io                v1.17.2    Deployed
+traefik       traefik          traefik        https://traefik.github.io/charts          latest     Deployed
+longhorn-sy.. longhorn         longhorn       https://charts.longhorn.io                v1.8.1     Deployed
+argo-cd       argo-cd          argo-cd        https://argoproj.github.io/argo-helm      v8.0.9     Deployed
 ```
 
 After that, use `kubectx` and `kubens` (highly recommended tools) to switch your context and namespace. Then, verify the nodes.

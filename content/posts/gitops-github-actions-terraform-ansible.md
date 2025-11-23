@@ -1,11 +1,13 @@
 ---
-title: "GitOps (Part 2): GitHub Actions CI/CD Pipeline"
+title: "GitOps (Part 2): Secure On-Prem Automation with Ephemeral Runners and Tailscale"
 summary:
 date: 2025-11-17
 tags:
   - hashicorp-vault
   - tailscale
   - github-actions
+  - terraform
+  - ansible
 draft: false
 series:
   - GitOps

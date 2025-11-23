@@ -17,6 +17,8 @@ In the last two parts of the **On-Premise 101** series, I showed you how to prov
 
 So, before I show you how to deploy applications _on_ that cluster, I'm pivoting. I've decided to migrate the whole project to use **GitHub Actions** for CI/CD and **HashiCorp Vault** for secrets. The idea was simple: push code, run automation in a repeatable environment, fetch secrets from a central server, and never bake a long-lived credential into the repo.
 
+{{< youtubeLite id="G83csoZYCWQ" label="Video demo" >}}
+
 While that sounds great in theory, implementing it was harder than it sounded. _Way_ harder.
 
 However, after a couple of days of wrestling with HashiCorp Vault, I'm ready to share my design. In this post, I'll show you my Vault setup, how GitHub Actions authenticates _without_ static tokens, the new Terraform/Ansible SSH flow, and the operational lessons I learned. This is the foundation of a Zero-Trust design.

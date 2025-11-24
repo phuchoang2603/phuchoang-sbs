@@ -1,5 +1,5 @@
 ---
-title: "Building an AI-Powered ArXiv Pipeline: Thought n8n was the future, but not yet"
+title: "Building an AI ArXiv Pipeline: Is n8n the Future of Automation? Not Quite"
 description:
 date: 2025-11-02
 tags:

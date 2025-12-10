@@ -1,5 +1,5 @@
 ---
-title: "GitOps (Part 3): Secure Kubernetes Authentication with HashiCorp Vault OIDC"
+title: "Vault (Part 3): Secure Kubernetes Authentication with HashiCorp Vault OIDC"
 summary:
 date: 2025-11-23
 tags:
@@ -9,7 +9,7 @@ tags:
   - ansible
 draft: false
 series:
-  - GitOps
+  - Hashicorp Vault
 series_order: 3
 featureimage: https://i.ibb.co/fdwB6K72/image.png
 ---

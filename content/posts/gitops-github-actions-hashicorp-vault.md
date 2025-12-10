@@ -1,5 +1,5 @@
 ---
-title: "GitOps (Part 1): HashiCorp Vault for Zero Trust Secrets Management"
+title: "Vault (Part 1): HashiCorp Vault for Zero Trust Secrets Management"
 summary:
 date: 2025-11-16
 tags:
@@ -8,7 +8,7 @@ tags:
   - proxmox
 draft: false
 series:
-  - GitOps
+  - Hashicorp Vault
 series_order: 1
 featureimage: https://i.ibb.co/N6NjpBsS/image.png
 ---

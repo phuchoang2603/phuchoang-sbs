@@ -1,5 +1,5 @@
 ---
-title: "GitOps (Part 4): Dynamic Secrets for Kubernetes Pods with External Secrets Operator"
+title: "Vault (Part 4): Dynamic Secrets for Kubernetes Pods with External Secrets Operator"
 summary:
 date: 2025-11-24
 tags:
@@ -8,7 +8,7 @@ tags:
   - external-secrets
 draft: false
 series:
-  - GitOps
+  - Hashicorp Vault
 series_order: 4
 featureimage: https://i.ibb.co/Fkn0BVs3/img5.png
 ---

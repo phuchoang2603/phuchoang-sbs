@@ -1,5 +1,5 @@
 ---
-title: "GitOps (Part 2): Secure On-Prem Automation with Ephemeral Runners and Tailscale"
+title: "Vault (Part 2): Secure On-Prem Automation with Ephemeral Runners and Tailscale"
 summary:
 date: 2025-11-17
 tags:
@@ -10,7 +10,7 @@ tags:
   - ansible
 draft: false
 series:
-  - GitOps
+  - Hashicorp Vault
 series_order: 2
 featureimage: https://i.ibb.co/svYGrmPS/image.png
 ---

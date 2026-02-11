@@ -3,7 +3,7 @@ title: 'On-Premise 101 (Part 2): Proxmox, the "Glue" for My Homelab'
 description:
 date: 2025-10-30
 tags:
-  - proxmox
+  - devops/proxmox
 draft: false
 featureimage: https://i.ibb.co/7xFFLMjN/image.png
 series:

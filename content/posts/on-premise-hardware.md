@@ -3,7 +3,7 @@ title: "On-Premise 101 (Part 1): Building a 3-Node Cluster"
 description:
 date: 2025-10-28
 tags:
-  - self-hosted
+  - devops/self-hosted
 draft: false
 featureimage: https://i.ibb.co/LWNSPgY/IMG-0893.jpg
 series:

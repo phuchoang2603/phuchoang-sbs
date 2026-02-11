@@ -3,9 +3,9 @@ title: "Vault (Part 4): Dynamic Secrets for Kubernetes Pods with External Secret
 summary:
 date: 2025-11-24
 tags:
-  - hashicorp-vault
-  - kubernetes
-  - external-secrets
+  - security/hashicorp-vault
+  - devops/kubernetes
+  - security/external-secrets
 draft: false
 series:
   - Hashicorp Vault
@@ -13,7 +13,7 @@ series_order: 4
 featureimage: https://i.ibb.co/Fkn0BVs3/img5.png
 ---
 
-This is Part 4 of the GitOps series. In [Part 1](https://phuchoang.sbs/posts/gitops-github-actions-hashicorp-vault/), we bootstrapped Vault. In [Part 2](https://phuchoang.sbs/posts/gitops-github-actions-terraform-ansible/), we built our CI/CD pipeline. In [Part 3](https://phuchoang.sbs/posts/gitops-kubernetes-oidc-vault/), we finally killed the static `kubeconfig`.
+This is Part 4 of the Hashicorp Vault series. In [Part 1](https://phuchoang.sbs/posts/gitops-github-actions-hashicorp-vault/), we bootstrapped Vault. In [Part 2](https://phuchoang.sbs/posts/gitops-github-actions-terraform-ansible/), we built our CI/CD pipeline. In [Part 3](https://phuchoang.sbs/posts/gitops-kubernetes-oidc-vault/), we finally killed the static `kubeconfig`.
 
 We've secured our CI runners and our human `kubectl` access. But what about the apps _themselves_? We're on the final, most important step: **how do applications running _inside_ the cluster securely fetch their secrets?**
 
@@ -290,7 +290,7 @@ This YAML is the "config file" for ESO. It tells ESO:
 
 ## Step 3: Solving the CA Cert Chicken-and-Egg
 
-We're _almost_ done, but there's one last, subtle "gotcha."
+We're _almost_ done, but there's one last critical issue that we need to address.
 
 1. Vault is **outside** our cluster.
     
@@ -378,7 +378,7 @@ This is the final piece of glue. We're using our CI runner as a temporary "mule"
 
 It's a beautiful bit of automation, and it solves the chicken-and-egg problem perfectly.
 
-## Step 4: The Payoff — Using External Secrets
+## Using External Secrets
 
 Okay. The platform is built. The engine is running. Now, how does a developer on my team actually _use_ this?
 
@@ -518,4 +518,4 @@ In this part, we closed the final loop in our Zero Trust secret management story
 - We provided a **dead-simple workflow** for developers to consume secrets.
     
 
-**Next up:** We have the infrastructure, we have the secrets... now we need to deploy the apps. In the next part, we'll install **ArgoCD** and complete the full GitOps story.
+**Next up:** We have the infrastructure, we have the secrets... now we need to deploy the apps. This marks the beginning of the GitOps series coming up.

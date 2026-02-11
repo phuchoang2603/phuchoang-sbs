@@ -2,10 +2,10 @@
 title: Automate provisioning Kubernetes cluster on Proxmox with Terraform + Ansible
 date: 2025-05-31
 tags:
-  - kubernetes
-  - proxmox
-  - terraform
-  - ansible
+  - devops/kubernetes
+  - devops/proxmox
+  - devops/terraform
+  - devops/ansible
 draft: false
 featureimage: https://i.ibb.co/spY06yv4/image.png
 externalUrl: https://github.com/phuchoang2603/kubernetes-proxmox

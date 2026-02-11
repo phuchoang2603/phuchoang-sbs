@@ -2,8 +2,6 @@
 title: Reware App – Ewaste Management Solutions
 date: 2022-11-09
 tags:
-  - figma
-  - flutter
   - hackathon
 description:
 draft: false

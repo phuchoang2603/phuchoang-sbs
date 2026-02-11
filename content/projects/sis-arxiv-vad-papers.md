@@ -3,11 +3,7 @@ title: SIS ArXiv VAD Papers
 description:
 date: 2025-11-02
 tags:
-  - arxiv
-  - hugo
-  - mcp
-  - python
-  - n8n
+  - language/python
 draft: false
 featureimage: https://i.ibb.co/chTK0Djn/image.png
 externalUrl: https://github.com/phuchoang2603/sis-arxiv-vad-papers

@@ -3,9 +3,10 @@ title: Building a Secure Network for Homelab with OpenWRT, NextDNS, Tailscale, a
 description:
 date: 2025-10-27
 tags:
-  - self-hosted
-  - tailscale
-  - openwrt
+  - devops/self-hosted
+  - network/tailscale
+  - network/openwrt
+  - network/dns
 draft: false
 featureimage: https://i.ibb.co/8DM5Bswh/image.png
 ---

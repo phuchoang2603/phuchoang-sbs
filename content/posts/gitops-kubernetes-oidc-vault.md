@@ -3,10 +3,10 @@ title: "Vault (Part 3): Secure Kubernetes Authentication with HashiCorp Vault OI
 summary:
 date: 2025-11-23
 tags:
-  - hashicorp-vault
-  - kubernetes
-  - terraform
-  - ansible
+  - security/hashicorp-vault
+  - devops/kubernetes
+  - devops/terraform
+  - devops/ansible
 draft: false
 series:
   - Hashicorp Vault
@@ -14,7 +14,7 @@ series_order: 3
 featureimage: https://i.ibb.co/fdwB6K72/image.png
 ---
 
-This is Part 3 of the GitOps series. In [Part 1](https://phuchoang.sbs/posts/gitops-github-actions-hashicorp-vault/), we bootstrapped Vault. In [Part 2](https://phuchoang.sbs/posts/gitops-github-actions-terraform-ansible/), we built the full CI/CD pipeline. Now, we're solving the final, massive headache: **getting secure, dynamic `kubectl` access.**
+This is Part 3 of the Hashicorp Vault series. In [Part 1](https://phuchoang.sbs/posts/gitops-github-actions-hashicorp-vault/), we bootstrapped Vault. In [Part 2](https://phuchoang.sbs/posts/gitops-github-actions-terraform-ansible/), we built the full CI/CD pipeline. Now, we're solving the final, massive headache: **getting secure, dynamic `kubectl` access.**
 
 ## The Problem: Static Kubeconfig Files
 

@@ -3,11 +3,11 @@ title: "Vault (Part 2): Secure On-Prem Automation with Ephemeral Runners and Tai
 summary:
 date: 2025-11-17
 tags:
-  - hashicorp-vault
-  - tailscale
-  - github-actions
-  - terraform
-  - ansible
+  - security/hashicorp-vault
+  - network/tailscale
+  - devops/github-actions
+  - devops/terraform
+  - devops/ansible
 draft: false
 series:
   - Hashicorp Vault
@@ -15,7 +15,7 @@ series_order: 2
 featureimage: https://i.ibb.co/svYGrmPS/image.png
 ---
 
-This is Part 2 of the GitOps series. Part 1 covered bootstrapping and configuring HashiCorp Vault (the one-time `terraform-admin` work) and the design goals for Zero Trust secrets management.
+This is Part 2 of the Hashicorp Vault series. Part 1 covered bootstrapping and configuring HashiCorp Vault (the one-time `terraform-admin` work) and the design goals for Zero Trust secrets management.
 
 With Vault configured and the auth roles in place, it's time to wire up the CI/CD pipeline. The workflows in `.github/workflows` will authenticate to Vault, fetch secrets, and then provision and configure the infrastructure.
 

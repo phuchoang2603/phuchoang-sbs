@@ -2,8 +2,7 @@
 title: "Automating Manga Translations: My Journey to a Seamless Reading Experience"
 date: 2025-03-03
 tags:
-  - self-hosted
-  - entertainment
+  - devops/self-hosted
 description:
 draft: false
 featureimage: https://i.ibb.co/V0Hk9hPh/image.png

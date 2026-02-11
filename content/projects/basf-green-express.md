@@ -3,7 +3,6 @@ title: The Green Express – Initial Business Concept of Fostering Ewaste Reduct
 date: 2022-06-09
 description:
 tags:
-  - figma
   - hackathon
 draft: false
 layout: "zen"

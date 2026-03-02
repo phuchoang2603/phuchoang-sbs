@@ -29,8 +29,4 @@ The problem is, my brain isn't big enough to remember all these commands and wei
 ## My "On-Paper" Stats
 Alright, enough stories. If you're interested in my professional journey, my skills, and all that "hire me" stuff, you can find the details in the resume I've embedded below.
 
-{{< raw >}}
-  <div>
-<iframe src="https://drive.google.com/file/d/1lZVNqwXxoQWUyqAsij1ZJINigSVp0CtP/preview" style="width: 100%; min-height: 720px; border: none;" allow="autoplay"></iframe>
-  </div>
-{{< /raw >}}
+{{< embed-pdf url="./resume.pdf" >}}
